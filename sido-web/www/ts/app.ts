@@ -5,6 +5,8 @@
 module jahland.Quizz {
     'use strict';
 
+    declare function loadMapsApi(): void;
+
     export module Application {
 
         export function initialize():void {
@@ -26,8 +28,6 @@ module jahland.Quizz {
             //document.addEventListener('onMenuButton', onDeviceBackButton, false);
             //document.addEventListener('onMenuButton', onDeviceSearchButton, false);
             // TODO: Scripts are ready to load.
-
-
             // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
         }
 

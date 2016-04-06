@@ -24,8 +24,6 @@
     <script src="./node_modules/rxjs/bundles/Rx.min.js"></script>
     <script src="./node_modules/reflect-metadata/Reflect.js"></script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqtP0m6qKQGGupWg9ddeth7qmZjSfw1Vk&signed_in=true" async defer></script>
-
     <!-- Cordova reference, this is added to your app when it's built. -->
     <!-- This will return a 404 error when building, and is expected.  Cordova JavaScript src files are dynamically written to the html.-->
     <script src="cordova.js"></script>
@@ -37,9 +35,17 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="./css/quizz.css" />
 
-
+    <script type="text/javascript">
+      function loadMapsApi () {
+        if(navigator.connection.type === Connection.NONE || google.maps) {
+          return;
+        }
+        $.getScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyCqtP0m6qKQGGupWg9ddeth7qmZjSfw1Vk&signed_in=true');
+        alert('js loaded');
+      }
+    </script>
   </head>
-  <body>
+  <body onload="loadMapsApi()">
     <div class="app container">
       <my-app>
           Loading...

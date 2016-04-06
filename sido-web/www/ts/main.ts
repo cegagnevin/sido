@@ -7,7 +7,6 @@ import {FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/common';
 import {Router, ROUTER_DIRECTIVES} from 'angular2/router';
 import {OnInit} from "angular2/core";
 import {UserService} from "./services/UserService";
-import {google} from "angular2-google-maps/services/google-maps-types";
 
 declare function initMap(): void;
 
