@@ -8,12 +8,8 @@ import {Router, ROUTER_DIRECTIVES} from 'angular2/router';
 import {OnInit} from "angular2/core";
 
 import {UserService} from "./services/UserService";
-
 import {LoginFormComponent} from './components/LoginFormComponent';
-
-declare function initItinerary(origin, destination): void;
-declare function addMarker(latitude, longitude, title): void;
-declare function getGPSCoordinates(cbSuccess, cbError): void;
+import {Facade} from "./Facade";
 
 @Component({
     selector: 'my-app',
@@ -37,11 +33,11 @@ export class AppComponent {
 
     constructor() {
         console.log('Home loaded');
-        initItinerary('Paris', 'Clermont-Ferrand');
-        addMarker(47.902964, 1.9092510000000402, 'test jkh jkdsf sdkjfhsd fkjhds fkdhs fsdk');
-        addMarker(45.7851608, 4.8567564999999995, 'On est ici !');
+        Facade.initItinerary('Paris', 'Clermont-Ferrand');
+        Facade.addMarker(47.902964, 1.9092510000000402, 'test jkh jkdsf sdkjfhsd fkjhds fkdhs fsdk');
+        Facade.addMarker(45.7851608, 4.8567564999999995, 'On est ici !');
 
-        getGPSCoordinates((function(coords) {
+        Facade.getGPSCoordinates((function(coords) {
             this.latitude = coords.latitude;
             this.longitude = coords.longitude;
         }).bind(this), function(error) {
