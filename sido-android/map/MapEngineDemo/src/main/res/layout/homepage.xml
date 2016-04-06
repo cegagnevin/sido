@@ -5,16 +5,20 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent">
 
-    <fragment android:name="com.mtp.android.mapengine.map.MapFragment"
-              android:id="@+id/map"
-              tools:ignore="MissingPrefix"
-              android:layout_width="fill_parent"
-              android:layout_height="fill_parent"
-              map:zoom="14"
-              map:latitude="48.858371"
-              map:longitude="2.294481"
-              map:auth_key="@string/auth_key"
+    <FrameLayout
+        android:id="@+id/map"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         />
+
+    <ToggleButton
+        android:id="@+id/toggleParis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOn="Paris"
+        android:textOff="Paris"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"/>
 
     <ToggleButton
             android:id="@+id/toggleTraffic"
