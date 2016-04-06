@@ -9,23 +9,27 @@ import {Customer} from '../models';
 
 
 @Component({
-    selector: 'customer',
     properties: ['id'],
     providers: [ROUTER_DIRECTIVES, CustomerService, FORM_DIRECTIVES, CORE_DIRECTIVES]
 })
 
 @View({
-    templateUrl: "./templates/customer.html",
+    templateUrl: './templates/customer.html',
     directives: [FORM_DIRECTIVES, CORE_DIRECTIVES]
 })
 export class CustomerComponent {
-    customer: Customer;
+    customer: Customer = new Customer();
 
     constructor(params: RouteParams, customerService: CustomerService) {
+        console.log("Customer Component");
+        this.customer.name="";
+
         customerService.getById(params.get('id'))
-            .subscribe((response)=> {
-                this.customer = <Customer>response;
+            .subscribe((response:Customer)=> {
+                this.customer.name = response.name;
+                console.log(this.customer);
             });
+
     }
 
 }

@@ -12,17 +12,12 @@ import {CustomerComponent} from "./components/CustomerComponent"
     directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
-
     {path: '/home', component: AppComponent, name: 'Home'},
     {path: '/customers/:id', component: CustomerComponent, name: 'Customer'}
 ])
 export class InternalRouter {
     constructor(private router: Router) {
-        this.router.navigate(['Home']);
-    }
 
-    goHome() {
-        this.router.navigate(['Home']);
-        //location.href = "/";
+        //this.router.navigate(['Home']);
     }
 }

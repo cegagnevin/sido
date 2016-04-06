@@ -1,25 +1,25 @@
 /**
- * Created by cChariereFiedler on 05/01/2016.
+ * Created by cChariereFiedler on 06/04/2016.
  */
 import {Injectable} from 'angular2/core';
 import {Http, Headers} from 'angular2/http';
 
 import {Constants} from "../utils/Constants";
-import {Customer} from "./../models";
+import {Poi} from "./../models";
 import {BaseService} from "./BaseService";
 
 
 
 @Injectable()
-export class CustomerService extends BaseService<Customer> {
+export class PoiService extends BaseService<Poi> {
     constructor(http:Http) {
         super(http);
     }
     protected getUrl():string {
-        return Constants.CUSTOMER_URL;
+        return Constants.POI_URL;
     }
 
-    protected getId(entity:Customer):string {
+    protected getId(entity:Poi):string {
         return entity.id;
     }
 

@@ -94,3 +94,16 @@ export class Poi {
     type: string;
     reference: string;
 }
+
+export class Round {
+    id: string;
+    name: string;
+    poIs: Array<Poi>;
+    customers: Array<Customer>;
+}
+
+export class Domain {
+    id: string;
+    name: string;
+    users: Array<User>;
+}

@@ -73,6 +73,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/ts/services/DomainService.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/ts/services/PoiService.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/ts/services/QuestionService.ts">
           <value>
             <set />
@@ -84,6 +94,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/ts/services/ResultService.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/ts/services/RoundService.ts">
           <value>
             <set />
           </value>
