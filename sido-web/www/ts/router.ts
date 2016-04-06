@@ -5,24 +5,22 @@ import {Component, Injectable} from 'angular2/core';
 import {Router, RouteConfig,  ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
 import {AppComponent} from "./main";
 import {CustomerComponent} from "./components/CustomerComponent"
+import {LoginFormComponent} from "./components/LoginFormComponent";
 
 @Component({
     selector: 'my-app',
     template: `<router-outlet></router-outlet>`,
     directives: [ROUTER_DIRECTIVES]
 })
-@RouteConfig([
 
+@RouteConfig([
+    {path: '/login', component: LoginFormComponent, name: 'Login'},
     {path: '/home', component: AppComponent, name: 'Home'},
     {path: '/customers/:id', component: CustomerComponent, name: 'Customer'}
 ])
+
 export class InternalRouter {
     constructor(private router: Router) {
-        this.router.navigate(['Home']);
-    }
-
-    goHome() {
-        this.router.navigate(['Home']);
-        //location.href = "/";
+        //this.router.navigate(['Login']);
     }
 }

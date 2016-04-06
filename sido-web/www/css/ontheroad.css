@@ -112,3 +112,27 @@ h2 {
     background-color: #312783;
     color: #ffffff;
 }
+
+/*********************************************
+                  Login
+*********************************************/
+
+.login-form .logo {
+    max-width: 300px;
+}
+
+.login-form input {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.login-form form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.login-form {
+    background-color: #97ca92;
+    text-align: center;
+}
