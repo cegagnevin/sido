@@ -17,6 +17,12 @@ public class Round {
 	@Getter @Setter
 	private String name;
 	
+	@Getter @Setter
+	private String startAddress;
+	
+	@Getter @Setter
+	private String finishAddress;
+	
 	@DBRef
 	@Getter @Setter
 	private List<PoI> PoIs;
