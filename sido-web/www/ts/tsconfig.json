@@ -20,6 +20,7 @@
     "./components/AnswerComponent.ts",
     "./components/SessionCountdown.ts",
     "./components/TagComponent.ts",
+    "./components/CustomerComponent.ts",
     "./directives/SelectionDirective.ts",
     "./directives/SelectionAnswerDirective.ts",
     "./services/BaseService.ts",

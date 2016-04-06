@@ -4,6 +4,7 @@
 import {Component, Injectable} from 'angular2/core';
 import {Router, RouteConfig,  ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
 import {AppComponent} from "./main";
+import {CustomerComponent} from "./components/CustomerComponent"
 
 @Component({
     selector: 'my-app',
@@ -17,6 +18,7 @@ import {AppComponent} from "./main";
 })
 @RouteConfig([
     {path: '/', component: AppComponent, name: 'Home'}
+    {path: '/customers/:id', component: CustomerComponent, name: 'Customer'}
 ])
 export class InternalRouter {
     constructor(private router: Router) {
