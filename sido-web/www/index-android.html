@@ -4,6 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="QCM everywhere">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src  'self' 'unsafe-inline' *">
     <title>QCM everywhere</title>
 
     <base href="file:///android_asset/www/">
@@ -23,10 +24,6 @@
     <script src="./node_modules/angular2/bootstrap.js"></script>
     <script src="./node_modules/rxjs/bundles/Rx.min.js"></script>
     <script src="./node_modules/reflect-metadata/Reflect.js"></script>
-    <script src="./node_modules/angular2-modal/dist/angular2-modal.js"></script>
-
-    <!-- Chart Js -->
-    <script src="./node_modules/chart.js/Chart.js"></script>
 
     <!-- Cordova reference, this is added to your app when it's built. -->
     <!-- This will return a 404 error when building, and is expected.  Cordova JavaScript src files are dynamically written to the html.-->
@@ -35,10 +32,13 @@
 	<!-- This file loads the applications JavaScript files.-->
     <script src="js/index.js"></script>
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="./css/quizz.css" />
+    <!-- Custom elements -->
+    <link rel="stylesheet" type="text/css" href="./css/ontheroad.css" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqtP0m6qKQGGupWg9ddeth7qmZjSfw1Vk&signed_in=true"></script>
+    <script src="custom_js/ontheroad.js"></script>
+
   </head>
-  <body>
+  <body onload="loadApi()">
     <div class="app container">
       <my-app>Loading...</my-app>
     </div>
