@@ -43,10 +43,12 @@ Temporary Items
 .apdisk
 target/*
 */target/*
-.idea/*
+*/.idea/*
 .metadata/*
 .recommenders/*
 RemoteSystemsTempFiles/*
 .classpath
 .project
 */.settings/*
+*/www/js/*
+*/www/node_modules/*

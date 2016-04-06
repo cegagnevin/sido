@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "target": "es5",
+    "module": "commonjs",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "outDir": "../js/"
+  },
+  "files": [
+    "./boot.ts",
+    "./index.ts",
+    "./app.ts",
+	"./main.ts",
+    "./models.ts",
+    "./router.ts",
+    "./components/AnswerComponent.ts",
+    "./components/SessionCountdown.ts",
+    "./components/TagComponent.ts",
+    "./directives/SelectionDirective.ts",
+    "./directives/SelectionAnswerDirective.ts",
+    "./services/BaseService.ts",
+    "./services/QuestionService.ts",
+    "./services/QuizzService.ts",
+    "./services/ResultService.ts",
+    "./services/TagService.ts",
+    "./services/UserService.ts",
+    "./services/CandidateService.ts",
+    "./utils/Constants.ts",
+    "./utils/Tools.ts",
+    "./utils/SecurityUtils.ts",
+    "./utils/SearchPipe.ts",
+    "./typings/tsd.d.ts"
+  ]
+}
