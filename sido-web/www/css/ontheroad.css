@@ -31,10 +31,10 @@ h2 {
     font-size: 24px ;
 }
 
-.bloc-address h2, .bloc-memos h2 {
-     background-color: #2daae1;
-     color: #ffffff;
- }
+.customer .bloc-address h2, .customer .bloc-memos h2 {
+    background-color: #2daae1;
+    color: #ffffff;
+}
 
 .icon {
     float: left;
@@ -48,9 +48,12 @@ h2 {
     padding: 20px 5px 20px 5px;
 }
 
-.bloc-address .opening-hours {
+.customer .bloc-address .opening-hours {
     background-color: #2daae1;
     color: #ffffff;
+}
+
+.bloc-address .opening-hours {
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -65,7 +68,7 @@ h2 {
     padding: 30px 0 30px 0;
 }
 
-.bloc-codes h2 {
+.customer .bloc-codes h2 {
     background-color: #f39000;
     color: #ffffff;
 }
@@ -96,4 +99,16 @@ h2 {
     margin-bottom: 10px;
 }
 
+/*********************************************
+                  Restaurant
+*********************************************/
 
+.restaurant .bloc-address h2, .restaurant .bloc-memos h2 {
+    background-color: #312783;
+    color: #ffffff;
+}
+
+.restaurant .bloc-address .opening-hours {
+    background-color: #312783;
+    color: #ffffff;
+}
