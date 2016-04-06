@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 import com.sopra.hackaton.security.BasicUserDetailsService;
+import com.sopra.hackaton.security.TokenProcessingFilter;
 
 /**
  * Created by mvincent on 22/11/2015.
@@ -27,14 +28,19 @@ public class GlobalSecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        TokenProcessingFilter filter = new TokenProcessingFilter();
+        filter.setUserService(userDetailsService);
+    	
         http
         // CSRF
         .csrf().disable()
+        .addFilter(filter)
         // Authentication mechanism
         .httpBasic().and()
         // Permission
         .authorizeRequests()
         .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+        .antMatchers(HttpMethod.POST, "/session/create").fullyAuthenticated()
         .anyRequest().authenticated();
     }
 }

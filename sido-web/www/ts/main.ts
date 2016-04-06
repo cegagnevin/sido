@@ -8,7 +8,11 @@ import {Router, ROUTER_DIRECTIVES} from 'angular2/router';
 import {OnInit} from "angular2/core";
 
 import {UserService} from "./services/UserService";
+
 import {LoginFormComponent} from './components/LoginFormComponent';
+
+declare function initMap(): void;
+
 
 @Component({
     selector: 'my-app',
@@ -29,6 +33,8 @@ export class AppComponent {
 
     constructor() {
         console.log('Home loaded');
+
+        initMap();
     }
 
 
