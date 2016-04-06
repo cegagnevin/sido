@@ -26,7 +26,7 @@ export class Constants {
     public static ANSWER_URL = "answer";
     public static TAGS_URL = "tags";
     public static QUIZZ_TAGS_URL = "quizzTags";
-    public static SESSION_URL = "session";
+    public static SESSION_URL = "/session";
     public static CREATE_URL = "/create";
     public static TEMP_URL = "/temp";
     public static CHECK_URL = "/check";

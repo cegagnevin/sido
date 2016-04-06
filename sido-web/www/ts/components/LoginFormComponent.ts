@@ -1,6 +1,7 @@
 import {Component} from "angular2/core";
 import {UserService} from "./../services/UserService";
 import {Router} from "angular2/router";
+import {Response} from 'angular2/http';
 import {ROUTER_DIRECTIVES} from "angular2/router";
 
 @Component({
@@ -10,6 +11,8 @@ import {ROUTER_DIRECTIVES} from "angular2/router";
 })
 
 export class LoginFormComponent {
+    authentKO: boolean = false;
+
     userService : UserService;
 
     login : string = "Enter Your login";
@@ -26,10 +29,24 @@ export class LoginFormComponent {
 
 
         this.userService.initSession(this.login, this.password)
-            .subscribe(() => {
-                console.log("Success");
-            });
+            .subscribe(
+                response => this.loginSuccessful(response),
+                err => this.loginFailure(),
+                () => console.log('Login complete')
+            );
+        }
 
+
+    loginSuccessful(resp: Response) {
+        console.log(resp);
+        localStorage.setItem('token', resp.text());
     }
 
+    loadUserDetails(resp: Response) {
+        var data = resp.json();
+    }
+
+    loginFailure() {
+        this.authentKO = true;
+    }
 }
