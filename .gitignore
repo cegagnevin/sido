@@ -52,3 +52,4 @@ RemoteSystemsTempFiles/*
 */.settings/*
 */www/js/*
 */www/node_modules/*
+*/platforms/*
