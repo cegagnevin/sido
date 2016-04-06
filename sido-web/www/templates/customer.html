@@ -7,14 +7,11 @@
         <address class="bloc-address">
             <h2>Adresse</h2>
             <img src="./img/customer-address.png" class="icon" />
-            <div>
-                Carte...
-            </div>
             <div class="address">
-                10 rue de la poste, 63000 Clermont-Ferrand
+                {{customer.address}}
             </div>
             <div class="opening-hours">
-                10h00 - 17h00
+                {{customer.openingHours}} - {{customer.closingHours}}
             </div>
         </address>
     </div>

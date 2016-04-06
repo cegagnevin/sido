@@ -22,11 +22,10 @@ export class CustomerComponent {
 
     constructor(params: RouteParams, customerService: CustomerService) {
         console.log("Customer Component");
-        this.customer.name="";
 
         customerService.getById(params.get('id'))
             .subscribe((response:Customer)=> {
-                this.customer.name = response.name;
+                this.customer = response;
                 console.log(this.customer);
             });
 

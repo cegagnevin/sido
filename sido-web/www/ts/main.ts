@@ -12,21 +12,14 @@ import {LoginFormComponent} from './components/LoginFormComponent';
 import {Facade} from "./Facade";
 
 @Component({
-    selector: 'my-app',
     providers: [UserService]
 })
 @View({
     templateUrl: './templates/home.html',
     styleUrls: ['./css/quizz.css'],
-    directives: [FORM_DIRECTIVES, CORE_DIRECTIVES, ROUTER_DIRECTIVES, LoginFormComponent]
+    directives: [FORM_DIRECTIVES, CORE_DIRECTIVES, ROUTER_DIRECTIVES]
 })
 export class AppComponent {
-
-    public connected: boolean = false;
-    public currentMenu: string = null;
-
-    public login: string = "default";
-    public password: string = "";
 
     public latitude:number;
     public longitude:number;

@@ -86,7 +86,18 @@ export class Customer {
     id:string;
     name: string;
     accessCodes: Array<AccessCode>;
-    address: Address;
+    address: string;
+    openingHours: string;
+    closingHours: string;
+
+
+    constructor(name:string='', accessCodes:Array<AccessCode>=null, address:string='', openingHours:string='', closingHours:string='') {
+        this.name = name;
+        this.accessCodes = accessCodes;
+        this.address = address;
+        this.openingHours = openingHours;
+        this.closingHours = closingHours;
+    }
 }
 
 export class Poi {
