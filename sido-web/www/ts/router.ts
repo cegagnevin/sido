@@ -8,12 +8,7 @@ import {CustomerComponent} from "./components/CustomerComponent"
 
 @Component({
     selector: 'my-app',
-    template: `<div><img src="./img/logo.jpg" style="width: 100%; cursor: hand" (click)="goHome()"></div>
-               <router-outlet></router-outlet>
-               <div class="panel-footer" style="margin-top: 10px;">Copyright © Sopra-Steria 2016
-               <a href="mailto:matthieu.vincent@soprasteria.com?subject=Quizz application request
-                &cc=david.capelani@soprasteria.com">contact us</a>
-               </div>`,
+    template: `<router-outlet></router-outlet>`,
     directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
