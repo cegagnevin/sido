@@ -24,51 +24,26 @@
     <script src="./node_modules/rxjs/bundles/Rx.min.js"></script>
     <script src="./node_modules/reflect-metadata/Reflect.js"></script>
 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqtP0m6qKQGGupWg9ddeth7qmZjSfw1Vk&signed_in=true" async defer></script>
+
     <!-- Cordova reference, this is added to your app when it's built. -->
     <!-- This will return a 404 error when building, and is expected.  Cordova JavaScript src files are dynamically written to the html.-->
     <script src="cordova.js"></script>
 	
 	<!-- This file loads the applications JavaScript files.-->
-    <script src="js/index.js"></script>
-
-    <script src="http://apijsv2.viamichelin.com/apijsv2/api/js?key=JSBS20160209165303164801960098$170741&lang=eng" type="text/javascript"></script>
-    <script type="text/javascript">
-      function fLoadMap() {
-        VMLaunch("ViaMichelin.Api.Map",{//Service parameters
-          //Map container (DOM element)
-          container : $_id("map_container"),
-          //Initial geographical coordinates of the map center
-          center : { coords : {lon: 8.53, lat: 47.38}},
-          //Initial zoom level
-          zoom : 11,
-          //Display map type selector
-          mapTypeControl : true,
-          //Display situation map
-          situationMapControl : true,
-          //Display service POIs selector
-          menuPoiControl : true,
-          //Display all available service POIS layers
-          menuPoiControlOptions:{mode:ViaMichelin.Api.Constants.Map.POI.MODE.ALL}
-        }, {//Callbacks
-          onInitSuccess: function() {
-            alert('Whoops!La carte ne peut pas être chargée!');
-          },
-          onInitError: function(){
-            alert('Whoops!La carte ne peut pas être chargée!');
-          }});
-      }
-    </script>
+      <script src="js/index.js"></script>
+      <script src="custom_js/ontheroad.js"></script>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="./css/quizz.css" />
-  </head>
-  <body  onload="fLoadMap();">
-  <div id="map_container"></div>
 
+
+  </head>
+  <body>
     <div class="app container">
       <my-app>
           Loading...
       </my-app>
     </div>
-  </body>
+   </body>
 </html>
