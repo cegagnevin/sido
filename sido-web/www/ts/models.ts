@@ -47,6 +47,10 @@ export class QuizzResult {
     quizzResult:number;
     results:Array<QuestionResult>;
 }
+
+//--------------------------------------------------------------------------------
+
+//--------------------------------------------------------------------------------
 // User information
 export class User {
 
@@ -55,4 +59,38 @@ export class User {
         this.password = password;
         this.label = label;
     }
+}
+
+
+//--------------------------------------------------------------------------------
+
+export class CoordsGPS {
+    lon: number;
+    lat: number;
+}
+
+export class Address {
+    postalCode: string;
+    city: string;
+    coords: CoordsGPS;
+}
+
+export class AccessCode {
+    id: string;
+    key: string;
+    code: string;
+}
+
+
+export class Customer {
+    id:string;
+    name: string;
+    accessCodes: Array<AccessCode>;
+    address: Address;
+}
+
+export class Poi {
+    id: string;
+    type: string;
+    reference: string;
 }
