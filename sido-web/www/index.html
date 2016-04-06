@@ -23,10 +23,6 @@
     <script src="./node_modules/angular2/bootstrap.js"></script>
     <script src="./node_modules/rxjs/bundles/Rx.min.js"></script>
     <script src="./node_modules/reflect-metadata/Reflect.js"></script>
-    <script src="./node_modules/angular2-modal/dist/angular2-modal.js"></script>
-
-    <!-- Chart Js -->
-    <script src="./node_modules/chart.js/Chart.js"></script>
 
     <!-- Cordova reference, this is added to your app when it's built. -->
     <!-- This will return a 404 error when building, and is expected.  Cordova JavaScript src files are dynamically written to the html.-->
@@ -37,8 +33,7 @@
 
     <script src="http://apijsv2.viamichelin.com/apijsv2/api/js?key=JSBS20160209165303164801960098$170741&lang=eng" type="text/javascript"></script>
     <script type="text/javascript">
-      function fLoadMap(){
-        alert('loading api');
+      function fLoadMap() {
         VMLaunch("ViaMichelin.Api.Map",{//Service parameters
           //Map container (DOM element)
           container : $_id("map_container"),

@@ -22,50 +22,12 @@ export class AppComponent {
     public connected: boolean = false;
     public currentMenu: string = null;
 
-    constructor(private uService : UserService, private router: Router) {
+    constructor(private router: Router) {
         console.log('Home loaded');
         this.goHome();
     }
 
     goHome() {
-        this.currentMenu = '';
-        let token = localStorage.getItem('token');
 
-        if (token) {
-            this.uService.checkSession(token)
-                .subscribe(
-                    data => this.relog(data),
-                    err =>  this.redirectToHome(),
-                    () => console.log('Session checked')
-                )
-        } else {
-            this.redirectToHome();
-        }
-    }
-
-    private relog(data) {
-        if (data) {
-            console.log('Session still valid, navigate to employee home');
-            this.router.navigate(['EmployeeHome']);
-        } else {
-            this.redirectToHome();
-        }
-    }
-
-    private redirectToHome() {
-        console.log('No session valid, navigate to global homepage');
-        this.connected = false;
-        localStorage.removeItem('employee');
-        localStorage.removeItem('candidateid');
-        this.router.navigate(['Home']);
-    }
-
-    selectMenu(menu:string) {
-        this.currentMenu = menu;
-        console.log('current main menu: ' + this.currentMenu)
-    }
-
-    public notHome():void {
-        this.connected = true;
     }
 };
