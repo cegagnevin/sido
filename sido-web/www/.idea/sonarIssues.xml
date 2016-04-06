@@ -13,12 +13,37 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/templates/_login.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/templates/customer.html">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/templates/home.html">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/ts/components/CustomerComponent.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/ts/components/LoginFormComponent.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/ts/components/RoundComponent.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/ts/main.ts">
           <value>
             <set />
           </value>
@@ -33,7 +58,47 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/ts/services/BaseService.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/ts/services/CandidateService.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/ts/services/CustomerService.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/ts/services/QuestionService.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/ts/services/QuizzService.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/ts/services/ResultService.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/ts/services/UserService.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/ts/tsconfig.json">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/ts/utils/Constants.ts">
           <value>
             <set />
           </value>

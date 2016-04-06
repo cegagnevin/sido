@@ -10,9 +10,17 @@ import {SecurityUtils} from './../utils/SecurityUtils';
 import {Candidate, QuizzResult} from "../models";
 
 @Injectable()
-export class CandidateService extends BaseService {
+export class CandidateService extends BaseService<Candidate> {
     constructor(http:Http) {
         super(http);
+    }
+
+    public getUrl():string {
+        return Constants.CANDIDATE_URL;
+    }
+
+    protected getId(entity:Candidate):string {
+        return entity.id;
     }
 
     /** Load all results. */

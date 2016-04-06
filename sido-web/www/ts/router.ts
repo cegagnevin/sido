@@ -17,7 +17,7 @@ import {CustomerComponent} from "./components/CustomerComponent"
     directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
-    {path: '/', component: AppComponent, name: 'Home'},
+    {path: '/home', component: AppComponent, name: 'Home'},
     {path: '/customers/:id', component: CustomerComponent, name: 'Customer'}
 ])
 export class InternalRouter {

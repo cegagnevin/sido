@@ -12,11 +12,17 @@ import {BaseService} from "./BaseService";
 
 
 @Injectable()
-export class ResultService extends BaseService{
+export class ResultService extends BaseService<QuizzResult>{
     constructor(public http:Http) {
         super(http);
     }
+    public getUrl():string {
+        return Constants.QUIZZ_RESULT_URL;
+    }
 
+    protected getId(entity:QuizzResult):string {
+        return entity.id;
+    }
     /** Load all results. */
     getAll() {
         return this.http.get(Constants.SERVER_URL + Constants.QUIZZ_RESULT_URL, SecurityUtils.tokenBasedAuthentication())

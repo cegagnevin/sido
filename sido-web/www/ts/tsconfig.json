@@ -20,7 +20,7 @@
     "./components/AnswerComponent.ts",
     "./components/SessionCountdown.ts",
     "./components/TagComponent.ts",
-    "./components/CustomerComponent.ts",
+
     "./directives/SelectionDirective.ts",
     "./directives/SelectionAnswerDirective.ts",
     "./services/BaseService.ts",
@@ -34,6 +34,10 @@
     "./utils/Tools.ts",
     "./utils/SecurityUtils.ts",
     "./utils/SearchPipe.ts",
-    "./typings/tsd.d.ts"
+    "./typings/tsd.d.ts",
+    //--------------------------------
+    "./components/CustomerComponent.ts",
+    "./components/LoginFormComponent.ts",
+    "./services/CustomerService.ts"
   ]
 }
