@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                xmlns:map="http://schemas.android.com/apk/res-auto"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+    <fragment android:name="com.mtp.android.mapengine.map.MapFragment"
+              android:id="@+id/map"
+              tools:ignore="MissingPrefix"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              map:zoom="14"
+              map:latitude="48.858371"
+              map:longitude="2.294481"
+              map:auth_key="@string/auth_key"
+        />
+
+    <ToggleButton
+            android:id="@+id/toggleTraffic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOn="traffic on"
+            android:textOff="traffic off"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:checked="true"/>
+
+    <com.mtp.android.mapengine.scale.ScaleView
+            android:id="@+id/scaleView"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dip"
+            android:gravity="right"
+            tools:ignore="MissingPrefix"/>
+
+    <Button
+            android:id="@+id/zoomOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_above="@id/scaleView"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="-"/>
+
+    <TextView
+            android:id="@+id/tv_zoom"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/zoomOut"
+            android:layout_above="@id/zoomOut"
+            android:gravity="center_horizontal"
+            android:textStyle="bold"
+            android:text="19"/>
+
+    <Button
+            android:id="@+id/zoomIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_above="@id/tv_zoom"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="+"/>
+
+
+
+</RelativeLayout>

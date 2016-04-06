@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" android:versionCode="2" android:versionName="SNAPSHOT" package="com.mtp.android.mapenginedemo">
+
+    <uses-sdk android:minSdkVersion="9" android:targetSdkVersion="22"/>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/>
+
+    <!-- hockey app needs this for UpdateManager -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:name=".MapEngineDemoApplication" android:theme="@style/Theme.AppCompat.Light">
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+
+        <service android:name="com.mtp.android.michelinlocation.service.MichelinLocationService"/>
+        <service android:name="com.mtp.android.michelinlocation.service.MockLocationProviderService"/>
+
+        <activity android:name="net.hockeyapp.android.UpdateActivity" tools:ignore="MissingRegistered"/>
+
+        <activity android:label="@string/app_name" android:launchMode="singleTop" android:name="com.mtp.android.mapenginedemo.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:label="MockLocationProvider" android:launchMode="singleTop" android:name="com.mtp.android.michelinlocation.activity.MockLocationProviderActivity">
+        </activity>
+
+        <activity android:label="Scale" android:launchMode="singleTop" android:name="com.mtp.android.mapenginedemo.CopyrightActivity">
+        </activity>
+
+    </application>
+</manifest>
