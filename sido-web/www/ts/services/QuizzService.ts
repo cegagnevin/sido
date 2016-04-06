@@ -18,9 +18,16 @@ import {Response} from "angular2/http";
 import {RequestOptionsArgs} from "angular2/http";
 
 @Injectable()
-export class QuizzService extends BaseService {
+export class QuizzService extends BaseService<Quizz> {
     constructor(http:Http) {
         super(http);
+    }
+
+    public getUrl():string {
+        return Constants.QUIZZ_URL;
+    }
+    protected getId(entity:Quizz):string {
+        return entity.id;
     }
 
     /** Loads all quizzes. */

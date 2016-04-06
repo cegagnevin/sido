@@ -10,9 +10,17 @@ import {Question} from "./../models";
 import {BaseService} from "./BaseService";
 
 @Injectable()
-export class QuestionService extends BaseService {
+export class QuestionService extends BaseService<Question> {
     constructor(http:Http) {
         super(http);
+    }
+
+    public getUrl():string {
+        return Constants.QUESTION_URL;
+    }
+
+    protected getId(entity:Question):string {
+        return entity.id;
     }
 
     /** Prefer this one to getAll */

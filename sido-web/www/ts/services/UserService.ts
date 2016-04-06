@@ -6,7 +6,7 @@ import {Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import {Constants} from './../utils/Constants'
 import {SecurityUtils} from './../utils/SecurityUtils'
-import {Question} from "./../models";
+import {Response} from "angular2/http";
 
 @Injectable()
 export class UserService {
@@ -20,8 +20,22 @@ export class UserService {
         return this.http.get(Constants.SERVER_URL + Constants.USER_URL + Constants.USER_INFO_URL + login, SecurityUtils.tokenBasedAuthentication());
     }
 
+
+    logMe(login: string, pwd: string) {
+
+        this.checkSession(localStorage.getItem('token'))
+            .subscribe((res:Response) => {
+                if(res.status != 200 ) {
+                    return this.initSession(login, pwd);
+                } else {
+                    return res;
+                }
+            })
+    }
+
     initSession(login: string, pwd:string) {
-        return this.http.post(Constants.SERVER_URL + Constants.SESSION_URL + Constants.CREATE_URL, login, SecurityUtils.authentication(login, pwd))
+        console.log("initSession");
+        return this.http.post(Constants.SERVER_URL + Constants.SESSION_URL + Constants.CREATE_URL, login, SecurityUtils.authentication(login, pwd));
     }
 
     checkSession(token: string) {
