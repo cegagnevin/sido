@@ -19,4 +19,10 @@ public class PoI {
 	@Getter @Setter
 	private String reference;
 	
+	@Getter @Setter
+	private String latitude;
+	
+	@Getter @Setter
+	private String longitude;
+	
 }

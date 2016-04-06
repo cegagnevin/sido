@@ -13,4 +13,10 @@ public class Customer {
 	@Getter @Setter
 	private String name;
 	
+	@Getter @Setter
+	private String latitude;
+	
+	@Getter @Setter
+	private String longitude;
+	
 }
