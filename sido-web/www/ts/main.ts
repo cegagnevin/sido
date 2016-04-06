@@ -11,8 +11,8 @@ import {UserService} from "./services/UserService";
 
 import {LoginFormComponent} from './components/LoginFormComponent';
 
-declare function initMap(): void;
-
+declare function initItinerary(origin, destination): void;
+declare function addMarker(latitude, longitude, title): void;
 
 @Component({
     selector: 'my-app',
@@ -33,9 +33,7 @@ export class AppComponent {
 
     constructor() {
         console.log('Home loaded');
-
-        initMap();
+        initItinerary('Paris', 'Clermont-Ferrand');
+        addMarker(47.902964, 1.9092510000000402, 'test jkh jkdsf sdkjfhsd fkjhds fkdhs fsdk');
     }
-
-
 }
