@@ -16,7 +16,7 @@ import {User} from "../models";
 
 @View({
     templateUrl: './templates/customer.html',
-    directives: [FORM_DIRECTIVES, CORE_DIRECTIVES]
+    directives: [FORM_DIRECTIVES, CORE_DIRECTIVES, ROUTER_DIRECTIVES]
 })
 export class CustomerComponent {
     customer: Customer = new Customer();
