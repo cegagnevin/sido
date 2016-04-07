@@ -21,6 +21,6 @@ import {LoginFormComponent} from "./components/LoginFormComponent";
 
 export class InternalRouter {
     constructor(private router: Router) {
-        //this.router.navigate(['Login']);
+        this.router.navigate(['Login']);
     }
 }
