@@ -9,7 +9,6 @@ function initItinerary(origin, destination, poIs, customers) {
     var directionsDisplay = new google.maps.DirectionsRenderer;
     var waypts = [];
 
-
     var steps = poIs.concat(customers).sort(function(step1, step2) {
         return step1.order - step2.order;
     });
@@ -40,11 +39,11 @@ function initItinerary(origin, destination, poIs, customers) {
     });
 }
 
-function addMarker(latitude, longitude, description) {
-    addMarkerWithType(latitude, longitude, description, "customer");
+function addMarker(latitude, longitude, description, address, openingHours, closingHours) {
+    addMarkerWithType(latitude, longitude, description, "customer", address, openingHours, closingHours);
 }
 
-function addMarkerWithType(latitude, longitude, description, type) {
+function addMarkerWithType(latitude, longitude, description, type, address, openingHours, closingHours) {
     var icon = './img/';
 
     switch(type) {
@@ -58,9 +57,10 @@ function addMarkerWithType(latitude, longitude, description, type) {
             icon += 'truck-info.png';
             break;
     }
+    console.log(address + openingHours);
 
     var infowindow = new google.maps.InfoWindow({
-        content: description
+        content: '<div class="marker-info"><strong class="marker-info-name">'+description+'</strong><p class="marker-info-address">'+address+'</p class="marker-info-hours"><p>Horaires : '+openingHours+' - '+closingHours+'</p></div>'
     });
 
     var marker = new google.maps.Marker({
