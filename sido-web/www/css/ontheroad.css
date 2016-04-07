@@ -143,3 +143,25 @@ h2 {
     padding: 0;
     height: 100%;
 }
+
+/*********************************************
+                  Round
+*********************************************/
+
+
+.bottom-bar {
+    background: white;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    box-shadow: 0px -10px 20px #656565;
+}
+
+.bottom-bar .element {
+    display: inline-block;
+    width: 30%;
+}
+
+.bottom-bar .middle-element {
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+}
