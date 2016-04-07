@@ -21,9 +21,31 @@
     </div>
 </div>
 
-<h1>{{id}}</h1>
-<h2>{{round.name}}</h2>
-<div *ngFor="#customer of round.customers">
-    {{customer.name}}
-    {{customer.address}}
+<h1>{{round.name}}</h1>
+
+<div class="container customer">
+
+    <div *ngFor="#customer of round.customers" class="round-row">
+
+        <div class="bloc">
+            <div class="nam bloc-title">
+            {{customer.name}}
+
+                <span class="timeslot">
+                    <span class="openingHours">
+                         {{customer.openingHours}}
+                    </span>
+                    -
+                    <span class="endingHours">
+                        {{customer.closingHours}}
+                    </span>
+                </span>
+            </div>
+            <div class="address">
+                {{customer.address}}
+            </div>
+
+        </div>
+        <div class="line-separator"></div>
+    </div>
 </div>
