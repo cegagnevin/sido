@@ -70,6 +70,7 @@ export class RoundComponent {
 
     goToCustomer(element: Customer) {
         if(element.id !== undefined) {
+            localStorage.setItem('customer', JSON.stringify(element))
             this.router.navigate(['Customer', {'id' : element.id}]);
         }
     }

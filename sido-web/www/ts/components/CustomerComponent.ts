@@ -21,14 +21,15 @@ export class CustomerComponent {
     customer: Customer = new Customer();
 
     constructor(params: RouteParams, customerService: CustomerService) {
-        console.log("Customer Component");
 
+        this.customer = JSON.parse(localStorage.getItem('customer'));
+        console.log("Customer Component" + this.customer);
+        /*
         customerService.getById(params.get('id'))
             .subscribe((response:Customer)=> {
                 this.customer = response;
-                console.log(this.customer);
             });
-
+        */
     }
 
 }
