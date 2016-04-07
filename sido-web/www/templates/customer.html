@@ -16,43 +16,36 @@
         </address>
     </div>
     <!-- Codes -->
-    <div class="row">
+    <div class="row" *ngIf="customer.accessCodes.length > 0">
         <div class="bloc-codes">
             <h2>Codes d'accès</h2>
             <img src="./img/customer-lock.png" class="icon" />
             <div class="access-codes clear">
-                <access-code>
+                <access-code *ngFor="#accessCode of customer.accessCodes">
                     <div class="access-code">
-                        Porte d'entrée : 50ACBE
-                    </div>
-                </access-code>
-                <access-code>
-                    <div class="access-code">
-                        Portail : 1234
+                        <strong>{{accessCode.place}}</strong> : {{accessCode.code}}
                     </div>
                 </access-code>
             </div>
         </div>
     </div>
     <!-- Memos -->
-    <div class="row">
+    <div class="row" *ngIf="customer.memos.length > 0">
         <div class="bloc-memos">
+
             <h2>Memos</h2>
             <img src="./img/customer-memo.png" class="icon" />
             <div class="memos clear">
-                <memo class="memo clear">
-                    <div class="memo-title">Retard</div>
-                    <div class="memo-description">Client tenant à ce que les horaires soient respectés à 5mn près.</div>
-                    <div class="memo-author">Bob Moran - 06/04/16</div>
-                </memo>
-                <hr/>
-                <memo class="memo clear">
-                    <div class="memo-title">Se garer</div>
-                    <div class="memo-description">Place de livraison généralement disponible dans la rue derrière.</div>
-                    <div class="memo-author">Bob Moran - 06/04/16</div>
-                </memo>
+
+                <div *ngFor="#memo of customer.memos; #i = index" class="round-row">
+                    <memo class="memo clear">
+                        <div class="memo-title">{{memo.title}}</div>
+                        <div class="memo-description">{{memo.description}}</div>
+                        <!--<div class="memo-author">Bob Moran - 06/04/16</div>-->
+                    </memo>
+                    <hr *ngIf="i != customer.memos.length - 1"/>
+                </div>
             </div>
-        </div>
     </div>
 </div>
 

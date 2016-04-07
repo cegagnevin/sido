@@ -18,7 +18,7 @@ export class Constants {
     public static QUIZZ_WITH_TAG_URL = "/quizz-by-tags?";
     public static QUIZZ_RESULT_URL = "quizz-result";
     public static QUIZZ_RESULT_ID_URL = "/search/findById?id=";
-    public static USER_URL = "user";
+    public static USER_URL = "/user";
     public static USER_INFO_URL = "/search/findByLogin?login=";
     public static CANDIDATE_URL = "candidate";
     public static CANDIDATE_ID_URL = "/search/findByCandidateId?candidateId=";
