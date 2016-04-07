@@ -16,12 +16,12 @@ import {
 import {Router} from "angular2/router";
 import {Customer} from "../models";
 import {User} from "../models";
+import {RouteParams} from "angular2/router";
 
 
 @Component({
     selector: 'round',
-    providers: [RoundService, PoiService],
-    properties: ['id']
+    providers: [RoundService, PoiService]
 })
 
 @View({
@@ -38,12 +38,19 @@ export class RoundComponent {
 
     filter: String="customer";
 
-    constructor(router: Router, roundService : RoundService, poiService: PoiService, @Attribute('id') id:string){
-        this.id = id;
+    constructor(params: RouteParams,router: Router, roundService : RoundService, poiService: PoiService){
+        this.id = params.get('id') || null;
         this.router = router;
 
         var user = <User>JSON.parse(localStorage.getItem('user'));
-        this.round = user.rounds[0];
+
+        if(this.id === null) {
+            this.round = user.rounds[0];
+        } else {
+            this.round = user.rounds.find(element=> element['id'] == this.id);
+        }
+
+        localStorage.setItem('currentRound', JSON.stringify(this.round));
 
         this.areas = this.round.poIs.filter(element => element.type == 'area');
         this.restaurants = this.round.poIs.filter(element => element.type == 'restaurant');

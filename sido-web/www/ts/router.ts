@@ -18,6 +18,7 @@ import {NewMemoFormComponent} from "./components/NewMemoFormComponent";
 @RouteConfig([
     {path: '/login', component: LoginFormComponent, name: 'Login'},
     {path: '/home', component: AppComponent, name: 'Home'},
+    {path: '/home/:id', component: AppComponent, name: 'TargetHome'},
     {path: '/customers/:id', component: CustomerComponent, name: 'Customer'},
     {path: '/customers/:id/memo/create', component: NewMemoFormComponent, name: 'CreateMemoCustomer'}
 ])

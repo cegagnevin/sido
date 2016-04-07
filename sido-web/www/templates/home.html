@@ -3,7 +3,9 @@
         <a class="navmenu-brand" [routerLink]="['Home']">OnTheRoad</a>
         <ul class="nav navmenu-nav">
             <li class="nav-menu-user active"><a href="#">{{user.surname}} {{user.forename}}</a></li>
-            <li *ngFor="#round of user.rounds"><a href="#">{{round.name}}</a></li>
+            <li *ngFor="#round of user.rounds">
+                <a [routerLink]="['TargetHome', {id: round.id}]">{{round.name}}</a>
+            </li>
         </ul>
     </nav>
     <div class="navbar navbar-default navbar-fixed-top">
@@ -18,5 +20,5 @@
     </div>
 </div>
 <div  style="margin-top: 60px">
-    <round id="57060ac1e4b0d1668685e88c"></round>
+    <round></round>
 </div>
