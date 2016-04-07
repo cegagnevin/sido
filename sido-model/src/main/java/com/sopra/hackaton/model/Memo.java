@@ -16,6 +16,10 @@ public class Memo {
 	@Getter @Setter
 	private String description;
 	
+	@Getter @Setter
+	private String author;
 	
+	@Getter @Setter
+	private String date;
 	
 }
