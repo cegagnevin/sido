@@ -15,6 +15,7 @@
     <platform name="android">
         <allow-intent href="market:*" />
         <allow-intent href="" />
+        <icon src="android/icon/logo.png" />
     </platform>
     <preference name="KeepRunning" value="True" />
     <preference name="ShowTitle" value="False" />

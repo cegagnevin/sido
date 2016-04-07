@@ -9,7 +9,8 @@ import {LoginFormComponent} from "./components/LoginFormComponent";
 
 @Component({
     selector: 'my-app',
-    template: `<router-outlet></router-outlet>`,
+    template: `<script src="custom_js/custom.js"></script>
+    <router-outlet></router-outlet>`,
     directives: [ROUTER_DIRECTIVES]
 })
 
