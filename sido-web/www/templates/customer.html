@@ -1,7 +1,26 @@
-<div class="container customer">
-    <div class="row">
-        <h1>{{customer.name}}</h1>
+
+<nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
+    <a class="navmenu-brand" href="#">OnTheRoad</a>
+    <ul class="nav navmenu-nav">
+        <li class="nav-menu-user active"><a href="#">{{user.surname}} {{user.forename}}</a></li>
+        <li *ngFor="#round of user.rounds"><a href="#">{{round.name}}</a></li>
+    </ul>
+</nav>
+<div class="row">
+    <div class="navbar navbar-default navbar-fixed-top">
+        <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-title">
+            {{customer.name}}
+        </div>
     </div>
+</div>
+
+<div class="container customer" style="margin-top: 60px">
+
     <!-- Adresse -->
     <div class="row">
         <address class="bloc-address">
