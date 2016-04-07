@@ -41,4 +41,7 @@ public class PoI {
 	
 	@Getter @Setter
 	private String order;
+	
+	@Getter @Setter
+	private String address;
 }
