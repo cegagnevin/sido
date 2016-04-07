@@ -44,20 +44,21 @@ h2 {
 }
 
 .bloc-address .address, .bloc {
-    background-color: white;
-    padding: 20px 5px 20px 5px;
+     background-color: white;
+     padding: 20px 5px 20px 5px;
+ }
+
+.bloc-address .address {
+    text-align: center;
 }
 
-.customer .bloc-address .opening-hours {
-    background-color: #2daae1;
-    color: #ffffff;
-}
-
-.bloc-address .opening-hours {
+.opening-hours {
+    background-color: lightgrey;
+    color: black;
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .bloc-codes, .bloc-memos, .bloc {
@@ -158,7 +159,7 @@ h2 {
     width: 100%;
     position: relative;
     position:absolute;
-    bottom:-60px;
+    bottom: 0px;
 }
 
 .bottom-bar .element {
