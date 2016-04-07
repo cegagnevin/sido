@@ -31,6 +31,8 @@ import {User} from "../models";
 export class RoundComponent {
     id: string;
     round: Round = new Round();
+    restaurants: Array<Poi>;
+    areas: Array<Poi>;
 
     router: Router;
 
@@ -40,6 +42,9 @@ export class RoundComponent {
 
         var user = <User>JSON.parse(localStorage.getItem('user'));
         this.round = user.rounds[0];
+
+        this.areas = this.round.poIs.filter(element => element.type == 'area');
+        this.restaurants = this.round.poIs.filter(element => element.type == 'restaurant');
 
         this.initMap();
         this.initPoI();
@@ -53,7 +58,6 @@ export class RoundComponent {
     initPoI() {
         if(this.round.poIs != null) {
             this.round.poIs.forEach(function (poi) {
-                console.log(poi.latitude + ' - ' + poi.longitude + ' - ' + poi.type);
                 Facade.addMarkerWithType(+poi.latitude, +poi.longitude, poi.name, poi.type);
             })
         }
@@ -62,7 +66,6 @@ export class RoundComponent {
     initCustomers() {
         if(this.round.customers != null) {
             this.round.customers.forEach(function (customer) {
-                console.log(customer.latitude + ' - ' + customer.longitude + ' - ' + customer.name);
                 Facade.addMarkerWithType(+customer.latitude, +customer.longitude, customer.name, 'customer');
             })
         }
