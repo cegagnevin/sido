@@ -4,6 +4,13 @@
 
 var map;
 
+function initCenterMap(latitude, longitude) {
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: latitude, lng: longitude},
+        zoom: 9
+    });
+}
+
 function initItinerary(origin, destination, poIs, customers) {
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer;

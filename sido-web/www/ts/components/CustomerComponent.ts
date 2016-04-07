@@ -7,6 +7,7 @@ import {ROUTER_DIRECTIVES, RouteParams, RouteConfig, Router} from "angular2/rout
 import {CustomerService} from "../services/CustomerService";
 import {Customer} from '../models';
 import {User} from "../models";
+import {Facade} from "../Facade";
 
 
 @Component({
@@ -24,10 +25,13 @@ export class CustomerComponent {
 
     constructor(params: RouteParams, customerService: CustomerService) {
 
-        this.customer = JSON.parse(localStorage.getItem('customer'));
+        this.customer = <Customer>JSON.parse(localStorage.getItem('customer'));
         this.user = <User>JSON.parse(localStorage.getItem('user'));
 
         console.log("Customer Component" + this.customer);
+
+        Facade.initCenterMap(+this.customer.latitude, +this.customer.longitude);
+        Facade.addMarkerWithType(+this.customer.latitude, +this.customer.longitude, '', 'customer', '', '', '');
     }
 
 }
