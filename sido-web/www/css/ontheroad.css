@@ -130,9 +130,16 @@ h2 {
     background-color: white;
     padding: 20px;
     border-radius: 5px;
+    margin: 20px;
 }
 
 .login-form {
     background-color: #97ca92;
     text-align: center;
+    padding: 0;
+}
+
+.container {
+    padding: 0;
+    height: 100%;
 }
