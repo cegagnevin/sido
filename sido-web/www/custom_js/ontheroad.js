@@ -45,7 +45,7 @@ function addMarker(latitude, longitude, description) {
 }
 
 function addMarkerWithType(latitude, longitude, description, type) {
-    var icon = '../img/';
+    var icon = './img/';
 
     switch(type) {
         case "restaurant":
