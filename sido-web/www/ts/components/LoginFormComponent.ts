@@ -56,6 +56,7 @@ export class LoginFormComponent {
         this.user = resp.json();
         localStorage.setItem('user', JSON.stringify(this.user));
         this.router.navigate(['Home']);
+        localStorage.setItem('currentRound', 0 + "");
     }
 
     loginFailure() {

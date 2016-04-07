@@ -9,23 +9,17 @@ function initItinerary(origin, destination, poIs, customers) {
     var directionsDisplay = new google.maps.DirectionsRenderer;
     var waypts = [];
 
-    if(poIs != null) {
-        poIs.forEach(function (poi) {
-            waypts.push({
-                location: {lat: +poi.latitude, lng: +poi.longitude},
-                stopover: false
-            });
-        });
-    }
 
-    if(customers != null) {
-        customers.forEach(function (customer) {
-            waypts.push({
-                location: {lat: +customer.latitude, lng: +customer.longitude},
-                stopover: false
-            });
+    var steps = poIs.concat(customers).sort(function(step1, step2) {
+        return step1.order - step2.order;
+    });
+
+    steps.forEach(function (step) {
+        waypts.push({
+            location: {lat: +step.latitude, lng: +step.longitude},
+            stopover: false
         });
-    }
+    });
 
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 7
@@ -51,17 +45,17 @@ function addMarker(latitude, longitude, description) {
 }
 
 function addMarkerWithType(latitude, longitude, description, type) {
-    var icon = '../img/';
+    var icon = './img/';
 
     switch(type) {
         case "restaurant":
-            icon += 'restaurant.gif';
+            icon += 'restaurant.png';
             break;
         case "area":
-            icon += 'sleep.gif';
+            icon += 'sleep.png';
             break;
         case "customer":
-            icon += 'truck-info.gif';
+            icon += 'truck-info.png';
             break;
     }
 

@@ -54,3 +54,5 @@ RemoteSystemsTempFiles/*
 */www/node_modules/*
 */platforms/*
 */plugins/cordova*/*
+sido-web/plugins/fetch.json
+sido-web/plugins/android.json

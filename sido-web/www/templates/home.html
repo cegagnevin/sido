@@ -1,12 +1,22 @@
-<style>
-    html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
-    #map {
-        height: 100%;
-    }
-</style>
-
-<round id="57061441e4b0d1668685e88d"></round>
+<div *ngIf="user != null">
+    <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
+        <a class="navmenu-brand" [routerLink]="['Home']">OnTheRoad</a>
+        <ul class="nav navmenu-nav">
+            <li class="nav-menu-user active"><a href="#">{{user.surname}} {{user.forename}}</a></li>
+            <li *ngFor="#round of user.rounds"><a href="#">{{round.name}}</a></li>
+        </ul>
+    </nav>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-title">
+            {{round.name}}
+        </div>
+    </div>
+</div>
+<div  style="margin-top: 60px">
+    <round id="57060ac1e4b0d1668685e88c"></round>
+</div>
