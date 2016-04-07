@@ -49,13 +49,13 @@ function addMarkerWithType(latitude, longitude, description, type) {
 
     switch(type) {
         case "restaurant":
-            icon += 'restaurant.gif';
+            icon += 'restaurant.png';
             break;
         case "area":
-            icon += 'sleep.gif';
+            icon += 'sleep.png';
             break;
         case "customer":
-            icon += 'truck-info.gif';
+            icon += 'truck-info.png';
             break;
     }
 
