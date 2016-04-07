@@ -1,5 +1,7 @@
 package com.sopra.hackaton.model;
 
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 
 import lombok.Getter;
@@ -15,4 +17,14 @@ public class User {
 	
 	@Getter @Setter
 	private String password;
+	
+	@Getter @Setter
+	private String surname;
+	
+	@Getter @Setter
+	private String forename;
+	
+	@Getter @Setter
+	private List<Round> rounds;
+	
 }

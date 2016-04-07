@@ -40,4 +40,6 @@ public class Customer {
 	//@DBRef
 	private List<Memo> memos;
 	
+	@Getter @Setter
+	private String order;
 }
