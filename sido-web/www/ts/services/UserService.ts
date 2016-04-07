@@ -7,6 +7,7 @@ import 'rxjs/add/operator/map';
 import {Constants} from './../utils/Constants'
 import {SecurityUtils} from './../utils/SecurityUtils'
 import {Response} from "angular2/http";
+import {User} from "../models";
 
 @Injectable()
 export class UserService {
@@ -41,5 +42,20 @@ export class UserService {
     checkSession(token: string) {
         return this.http.post(Constants.SERVER_URL + Constants.SESSION_URL + Constants.CHECK_URL, token, SecurityUtils.tokenBasedAuthentication())
         .map(res => res.text);
+    }
+
+    updateUser(user: User) {
+        var headers: Headers = SecurityUtils.tokenHeaders();
+        headers.append('Content-Type', 'application/json');
+
+        return this.http.put(Constants.SERVER_URL + Constants.USER_URL + '/' + user.id, JSON.stringify(user), {
+                headers: headers
+            })
+            .map(res => res.json())
+            .subscribe(
+                data => console.log('data = ' + data),
+                err => console.log(err),
+                () => console.log('Post complete')
+            );
     }
 }

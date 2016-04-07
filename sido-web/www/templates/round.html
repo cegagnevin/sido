@@ -51,7 +51,6 @@
                 <div *ngFor="#memo of customer.memos; #i = index" class="round-row">
                     <memo class="memo clear">
                         <div class="memo-title"><h3>{{memo.title}}</h3></div>
-                        <div class="memo-description">{{memo.description}}</div>
                     </memo>
                     <hr *ngIf="i != customer.memos.length - 1"/>
                 </div>

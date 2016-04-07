@@ -1,13 +1,10 @@
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
+<br />
+<br />
+<br />
 
 <div class="container">
-    <h1>Add a memo </h1>
+    <h1>Ajouter un memo</h1>
     <div class="bloc">
-        <form (ngSubmit)="onSubmit()">
             <div class="error" *ngIf="error != ''">
                 {{error}}
             </div>
@@ -17,11 +14,10 @@
             </div>
             <div class="form-group">
                 <label for="description">Description</label>
-                <textarea id="description"  class="form-control" required [(ngModel)]="memo.descriptions" rows="5">
+                <textarea id="description"  class="form-control" required [(ngModel)]="memo.description" rows="5">
                 </textarea>
             </div>
 
-            <button type="submit" class="btn btn-success btn-flat ">Submit</button>
-        </form>
+            <img src="./img/customer-memo.png" alt="Sauvegarder" title="Sauvegarder" (click)="onSubmit()">
     </div>
 </div>

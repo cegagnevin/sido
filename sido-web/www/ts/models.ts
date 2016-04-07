@@ -2,7 +2,8 @@
 // User information
 export class User {
 
-    constructor(public login: string, public surname:string, public password:string, public forename:string, public rounds:Array<Round>) {
+    constructor(public id: string, public login: string, public surname:string, public password:string, public forename:string, public rounds:Array<Round>) {
+        this.id = id;
         this.login = login;
         this.password = password;
         this.surname = surname;
@@ -52,9 +53,10 @@ export class Customer {
     closingHours: string;
     latitude: number;
     longitude: number;
+    memos: Array<Memo>;
 
 
-    constructor(name:string='', accessCodes:Array<AccessCode>=null, address:string='', openingHours:string='', closingHours:string='', latitude:number=0, longitude:number=0) {
+    constructor(name:string='', accessCodes:Array<AccessCode>=null, address:string='', openingHours:string='', closingHours:string='', latitude:number=0, longitude:number=0, memos:Array<Memo>=null) {
         this.name = name;
         this.accessCodes = accessCodes;
         this.address = address;
@@ -62,6 +64,7 @@ export class Customer {
         this.closingHours = closingHours;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.memos = memos;
     }
 }
 

@@ -28,11 +28,13 @@ export class AppComponent {
     public longitude:number;
     user: User;
     round: Round;
-
+    roundName: string;
     constructor() {
         console.log('Home loaded');
         this.user = <User>JSON.parse(localStorage.getItem('user'));
         console.log(this.round);
         this.round = this.user.rounds[+localStorage.getItem('currentRound')];
+
+        this.roundName = "My Round";
     }
 }
