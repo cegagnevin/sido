@@ -20,7 +20,6 @@
     "./services/BaseService.ts",
     "./services/UserService.ts",
     "./utils/Constants.ts",
-    "./utils/Tools.ts",
     "./utils/SecurityUtils.ts",
     "./utils/SearchPipe.ts",
     "./typings/tsd.d.ts",

@@ -4,6 +4,7 @@ import {Router} from "angular2/router";
 import {Response} from 'angular2/http';
 import {ROUTER_DIRECTIVES} from "angular2/router";
 import {View} from "angular2/core";
+import {User} from "../models";
 
 @Component({
     providers: [UserService, ROUTER_DIRECTIVES]
@@ -22,6 +23,7 @@ export class LoginFormComponent {
 
     login : string = '';
     password: string = '';
+    user: User;
 
     submitted:boolean = false;
 
@@ -46,11 +48,17 @@ export class LoginFormComponent {
     loginSuccessful(resp: Response) {
         console.log(resp);
         localStorage.setItem('token', resp.text());
-        this.router.navigate(['Home']);
+        this.userService.login(this.login).subscribe(
+            response => this.loadUserDetails(response),
+            err => this.loginFailure(),
+            () => console.log('User details loaded')
+        )
     }
 
     loadUserDetails(resp: Response) {
-        var data = resp.json();
+        this.user = resp.json();
+        localStorage.setItem('user', JSON.stringify(this.user));
+        this.router.navigate(['Home']);
     }
 
     loginFailure() {
