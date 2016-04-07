@@ -7,8 +7,8 @@ export class Constants {
     //public static SERVER_URL = "http://localhost:8080/";
 
     //test david
-    public static SERVER_URL = "http://ec2-54-171-152-249.eu-west-1.compute.amazonaws.com:8080/sido-server";
-    //public static SERVER_URL = "http://lptxraarecrut01.ptx.fr.sopra:8080/quizz-0.0.1/";
+    //public static SERVER_URL = "http://ec2-54-171-152-249.eu-west-1.compute.amazonaws.com:8080/sido-server";
+    //public static SERVER_URL = "http://localhost:8080/sido-server/";
 
     // URLs
     public static QUESTION_URL = "question";
@@ -18,7 +18,7 @@ export class Constants {
     public static QUIZZ_WITH_TAG_URL = "/quizz-by-tags?";
     public static QUIZZ_RESULT_URL = "quizz-result";
     public static QUIZZ_RESULT_ID_URL = "/search/findById?id=";
-    public static USER_URL = "user";
+    public static USER_URL = "/user";
     public static USER_INFO_URL = "/search/findByLogin?login=";
     public static CANDIDATE_URL = "candidate";
     public static CANDIDATE_ID_URL = "/search/findByCandidateId?candidateId=";
