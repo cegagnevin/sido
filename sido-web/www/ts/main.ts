@@ -27,7 +27,7 @@ export class AppComponent {
 
     constructor() {
         console.log('Home loaded');
-        Facade.initItinerary('Paris', 'Clermont-Ferrand');
+        /*Facade.initItinerary('Paris', 'Clermont-Ferrand');
         Facade.addMarker(47.902964, 1.9092510000000402, 'test jkh jkdsf sdkjfhsd fkjhds fkdhs fsdk');
         Facade.addMarker(45.7851608, 4.8567564999999995, 'On est ici !');
 
@@ -36,6 +36,6 @@ export class AppComponent {
             this.longitude = coords.longitude;
         }).bind(this), function(error) {
             console.log(error.code + ' - ' + error.message)
-        });
+        });*/
     }
 }

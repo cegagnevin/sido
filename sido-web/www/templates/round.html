@@ -9,6 +9,8 @@
     }
 </style>
 
+<div id="map"></div>
+
 <div class="bottom-bar">
     <div class="element">
         10 clients
@@ -26,4 +28,6 @@
 <div *ngFor="#customer of round.customers">
     {{customer.name}}
     {{customer.address}}
+    {{customer.latitude}}
+    {{customer.longitude}}
 </div>

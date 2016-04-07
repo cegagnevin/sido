@@ -94,14 +94,18 @@ export class Customer {
     address: string;
     openingHours: string;
     closingHours: string;
+    latitude: number;
+    longitude: number;
 
 
-    constructor(name:string='', accessCodes:Array<AccessCode>=null, address:string='', openingHours:string='', closingHours:string='') {
+    constructor(name:string='', accessCodes:Array<AccessCode>=null, address:string='', openingHours:string='', closingHours:string='', latitude:number=0, longitude:number=0) {
         this.name = name;
         this.accessCodes = accessCodes;
         this.address = address;
         this.openingHours = openingHours;
         this.closingHours = closingHours;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 }
 
@@ -109,19 +113,23 @@ export class Poi {
     id: string;
     type: string;
     reference: string;
-    coords : CoordsGPS;
+    latitude: number;
+    longitude: number;
 
 
-    constructor(type:string, reference:string, coords:CoordsGPS) {
+    constructor(type:string, reference:string, latitude:number, longitude:number) {
         this.type = type;
         this.reference = reference;
-        this.coords = coords;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 }
 
 export class Round {
     id: string;
     name: string;
+    startAddress: string;
+    finishAddress: string;
     poIs: Array<Poi>;
     customers: Array<Customer>;
 }
