@@ -227,6 +227,52 @@ h2 {
 }
 
 /*********************************************
+                  Button bar
+*********************************************/
+.big-button {
+    font-size: 70px;
+    font-weight: bolder;
+
+
+    min-width: 100px;
+    max-width: 100px;
+    min-height: 100px;
+    max-height: 100px;
+    text-align: center;
+    padding-bottom: 20px;
+    border-radius: 200px;
+    box-shadow: 0px 3px 20px rgba(0,0,0,0.3);
+
+    text-decoration: none;
+
+    transition:ease-in all 0.1s ;
+}
+.big-button:active {
+
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
+}
+
+.big-button .add {
+    background-color: #9bb86d;
+    border-color: #2b542c;
+    color: white;
+    text-decoration: none;
+
+}
+.btn-fixed-right {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+
+    transition:ease-in all 0.1s;
+}
+.btn-fixed-right:active {
+    position: fixed;
+    right: 47px;
+    bottom: 45px;
+}
+
+/*********************************************
                   Status bar
 *********************************************/
 
