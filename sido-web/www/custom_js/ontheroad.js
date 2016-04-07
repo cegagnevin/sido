@@ -4,9 +4,24 @@
 
 var map;
 
-function initItinerary(origin, destination) {
+function initItinerary(origin, destination, poIs, customers) {
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer;
+    var waypts = [];
+
+    poIs.forEach(function(poi) {
+        waypts.push({
+            location: {lat: +poi.latitude, lng: +poi.longitude},
+            stopover: false
+        });
+    });
+
+    customers.forEach(function(customer) {
+        waypts.push({
+            location: {lat: +customer.latitude, lng: +customer.longitude},
+            stopover: false
+        });
+    });
 
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 7
@@ -16,6 +31,7 @@ function initItinerary(origin, destination) {
     directionsService.route({
         origin: origin,
         destination: destination,
+        waypoints: waypts,
         travelMode: google.maps.TravelMode.DRIVING
     }, function(response, status) {
         if (status === google.maps.DirectionsStatus.OK) {
@@ -27,6 +43,24 @@ function initItinerary(origin, destination) {
 }
 
 function addMarker(latitude, longitude, description) {
+    addMarkerWithType(latitude, longitude, description, "customer");
+}
+
+function addMarkerWithType(latitude, longitude, description, type) {
+    var icon = '../img/';
+
+    switch(type) {
+        case "restaurant":
+            icon += 'restaurant.gif';
+            break;
+        case "area":
+            icon += 'sleep.gif';
+            break;
+        case "customer":
+            icon += 'truck-info.gif';
+            break;
+    }
+
     var infowindow = new google.maps.InfoWindow({
         content: description
     });
@@ -34,7 +68,8 @@ function addMarker(latitude, longitude, description) {
     var marker = new google.maps.Marker({
         position: {lat: latitude, lng: longitude},
         map: map,
-        title: ''
+        title: '',
+        icon: icon
     });
 
     marker.addListener('click', function() {
