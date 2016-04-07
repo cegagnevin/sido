@@ -74,6 +74,12 @@ export class CoordsGPS {
     }
 }
 
+export class Memo {
+    id: string;
+    title: string;
+    description: string;
+}
+
 export class Address {
     postalCode: string;
     city: string;
