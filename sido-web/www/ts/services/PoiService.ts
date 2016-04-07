@@ -36,7 +36,7 @@ export class PoiService extends BaseService<Poi> {
             })
             .subscribe(res => {
                 res.forEach(item => {
-                    let poi : Poi = new Poi(item['poi'] || '',  item['type'] || '', new CoordsGPS(item['latitude'] || 0, item['longitude'] || 0));
+                    let poi : Poi = new Poi(item['poi'] || '',  item['type'] || '', item['latitude'] || 0, item['longitude'] || 0);
                     console.log("Round Poi : " + poi);
                     result.push(poi);
                 });

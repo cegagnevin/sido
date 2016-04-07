@@ -33,11 +33,11 @@ public class Customer {
 	private String closingHours;
 	
 	@Getter @Setter
-	@DBRef
+	//@DBRef
 	private List<AccessCode> accessCodes;
 	
 	@Getter @Setter
-	@DBRef
+	//@DBRef
 	private List<Memo> memos;
 	
 }

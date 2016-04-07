@@ -23,11 +23,11 @@ public class Round {
 	@Getter @Setter
 	private String finishAddress;
 	
-	@DBRef
+	//@DBRef
 	@Getter @Setter
 	private List<PoI> PoIs;
 	
-	@DBRef
+	//@DBRef
 	@Getter @Setter
 	private List<Customer> customers;
 }
