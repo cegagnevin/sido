@@ -36,7 +36,7 @@ public class PoI {
 	private String closingHours;
 	
 	@Getter @Setter
-	@DBRef
+	//@DBRef
 	private List<Memo> memos;
 	
 }

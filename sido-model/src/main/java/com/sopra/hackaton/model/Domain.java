@@ -18,7 +18,7 @@ public class Domain {
 	private String name;
 	
 	@Getter @Setter
-	@DBRef
+	//@DBRef
 	private List<User> users;
 	
 }
