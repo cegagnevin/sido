@@ -67,14 +67,16 @@ export class Customer {
 
 export class Poi {
     id: string;
+    name: string;
     type: string;
     reference: string;
     latitude: number;
     longitude: number;
 
 
-    constructor(type:string, reference:string, latitude:number, longitude:number) {
+    constructor(type:string, name:string, reference:string, latitude:number, longitude:number) {
         this.type = type;
+        this.name = name;
         this.reference = reference;
         this.latitude = latitude;
         this.longitude = longitude;

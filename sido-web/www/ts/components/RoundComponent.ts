@@ -50,17 +50,21 @@ export class RoundComponent {
     }
 
     initPoI() {
-        this.round.poIs.forEach(function(poi) {
-            console.log(poi.latitude + ' - '+ poi.longitude + ' - '+ poi.type);
-            Facade.addMarkerWithType(+poi.latitude, +poi.longitude, '', poi.type);
-        })
+        if(this.round.poIs != null) {
+            this.round.poIs.forEach(function (poi) {
+                console.log(poi.latitude + ' - ' + poi.longitude + ' - ' + poi.type);
+                Facade.addMarkerWithType(+poi.latitude, +poi.longitude, poi.name, poi.type);
+            })
+        }
     }
 
     initCustomers() {
-        this.round.customers.forEach(function(customer) {
-            console.log(customer.latitude + ' - '+ customer.longitude + ' - '+ customer.name);
-            Facade.addMarkerWithType(+customer.latitude, +customer.longitude, customer.name, 'customer');
-        })
+        if(this.round.customers != null) {
+            this.round.customers.forEach(function (customer) {
+                console.log(customer.latitude + ' - ' + customer.longitude + ' - ' + customer.name);
+                Facade.addMarkerWithType(+customer.latitude, +customer.longitude, customer.name, 'customer');
+            })
+        }
     }
 
     goToCustomer(element: Customer) {
