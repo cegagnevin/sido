@@ -15,6 +15,7 @@ import {
 } from 'angular2/router';
 import {Router} from "angular2/router";
 import {Customer} from "../models";
+import {User} from "../models";
 
 
 @Component({
@@ -36,13 +37,13 @@ export class RoundComponent {
     constructor(router: Router, roundService : RoundService, poiService: PoiService, @Attribute('id') id:string){
         this.id = id;
         this.router = router;
-        roundService.getById(this.id)
-            .subscribe((res:Round) => {
-                this.round = res;
-                this.initMap();
-                this.initPoI();
-                this.initCustomers();
-            });
+
+        var user = <User>JSON.parse(localStorage.getItem('user'));
+        this.round = user.rounds[0];
+
+        this.initMap();
+        this.initPoI();
+        this.initCustomers();
     }
 
     initMap() {
