@@ -7,7 +7,7 @@ export class Constants {
     //public static SERVER_URL = "http://localhost:8080/";
 
     //test david
-    //public static SERVER_URL = "http://ec2-54-171-152-249.eu-west-1.compute.amazonaws.com:8080/sido-server";
+    public static SERVER_URL = "http://ec2-54-171-152-249.eu-west-1.compute.amazonaws.com:8080/sido-server";
     //public static SERVER_URL = "http://localhost:8080/sido-server/";
 
     // URLs
