@@ -13,13 +13,13 @@
 
 <div class="bottom-bar">
     <div class="element" (click)="filter='customer'">
-        {{round.customers.length}} clients
+        <img src="./img/truck-info.png"/>  {{round.customers.length}} clients
     </div>
     <div class="element middle-element" (click)="filter='restaurant'">
-        {{restaurants.length}} restaurants
+        <img src="./img/restaurant.png" /> {{restaurants.length}} restaurants
     </div>
     <div class="element" (click)="filter='area'">
-        {{areas.length}} aire de repos
+        <img src="./img/sleep.png" /> {{areas.length}} aire de repos
     </div>
 </div>
 
@@ -44,7 +44,17 @@
 
             </div>
             <div class="address">
-                {{customer.address}}
+                <img src="./img/customer-address.png" class="small-icon"/> {{customer.address}}
+            </div>
+            <hr *ngIf="customer.memos.length > 0"/>
+            <div class="memos clear">
+                <div *ngFor="#memo of customer.memos; #i = index" class="round-row">
+                    <memo class="memo clear">
+                        <div class="memo-title"><h3>{{memo.title}}</h3></div>
+                        <div class="memo-description">{{memo.description}}</div>
+                    </memo>
+                    <hr *ngIf="i != customer.memos.length - 1"/>
+                </div>
             </div>
 
         </div>
@@ -60,7 +70,11 @@
             <div class="nam bloc-title">
                 <h2><img src="./img/restaurant.png" /> {{restaurant.name}}</h2>
             </div>
+            <div class="address">
+                <img src="./img/customer-address.png"  class="small-icon"/> {{restaurant.address}}
+            </div>
 
+            <hr *ngIf="restaurant.memos.length > 0"/>
             <div class="memos clear">
                 <div *ngFor="#memo of restaurant.memos; #i = index" class="round-row">
                     <memo class="memo clear">
@@ -82,7 +96,11 @@
             <div class="nam bloc-title">
                 <h2><img src="./img/sleep.png" /> {{area.name}}</h2>
             </div>
+            <div class="address">
+                <img src="./img/customer-address.png" class="small-icon"/> {{area.address}}
+            </div>
 
+            <hr *ngIf="area.memos.length > 0"/>
             <div class="memos clear">
                 <div *ngFor="#memo of area.memos; #i = index" class="round-row">
                     <memo class="memo clear">
