@@ -148,12 +148,17 @@ h2 {
                   Round
 *********************************************/
 
-
 .bottom-bar {
     background: white;
     padding: 10px 0 10px 0;
     text-align: center;
-    box-shadow: 0px -10px 20px #656565;
+    box-shadow: 0px 0px 15px #656565;
+    height: 40px;
+    float: left;
+    width: 100%;
+    position: relative;
+    position:absolute;
+    bottom:0;
 }
 
 .bottom-bar .element {
@@ -209,4 +214,46 @@ h2 {
     border-color: rgba(132, 132, 132, 0.21);
    margin: 0px 50px;
 
+}
+
+/*********************************************
+                  Status bar
+*********************************************/
+
+.navbar-toggle {
+    position: relative;
+    float: left;
+    padding: 9px 10px;
+    display: block;
+    margin-left: 10px;
+}
+
+.navbar-default {
+    background-color: #484747;
+    border-color: #191717;
+    text-align: center;
+}
+
+.navbar-default .navbar-toggle {
+    background: lightgrey;
+}
+
+.navmenu {
+    background: white;
+}
+
+.nav-menu-user, .navmenu-default .navmenu-nav>.active>a, .navmenu-default .navmenu-nav>.active>a:hover {
+    background-color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.navbar-title {
+    color: #EFE8E8;
+    font-weight: bold;
+    line-height: 50px;
+    font-size: 22px;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
 }

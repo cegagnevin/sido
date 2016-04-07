@@ -9,19 +9,23 @@ function initItinerary(origin, destination, poIs, customers) {
     var directionsDisplay = new google.maps.DirectionsRenderer;
     var waypts = [];
 
-    poIs.forEach(function(poi) {
-        waypts.push({
-            location: {lat: +poi.latitude, lng: +poi.longitude},
-            stopover: false
+    if(poIs != null) {
+        poIs.forEach(function (poi) {
+            waypts.push({
+                location: {lat: +poi.latitude, lng: +poi.longitude},
+                stopover: false
+            });
         });
-    });
+    }
 
-    customers.forEach(function(customer) {
-        waypts.push({
-            location: {lat: +customer.latitude, lng: +customer.longitude},
-            stopover: false
+    if(customers != null) {
+        customers.forEach(function (customer) {
+            waypts.push({
+                location: {lat: +customer.latitude, lng: +customer.longitude},
+                stopover: false
+            });
         });
-    });
+    }
 
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 7
