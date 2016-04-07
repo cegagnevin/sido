@@ -31,7 +31,7 @@ h2 {
     font-size: 24px ;
 }
 
-.customer .bloc-address h2, .customer .bloc-memos h2 {
+.customer .bloc-address h2, .customer .bloc-memos h2, .bloc title{
     background-color: #2daae1;
     color: #ffffff;
 }
@@ -43,7 +43,7 @@ h2 {
     bottom: 40px;
 }
 
-.bloc-address .address {
+.bloc-address .address, .bloc {
     background-color: white;
     padding: 20px 5px 20px 5px;
 }
@@ -60,7 +60,7 @@ h2 {
     font-size: 24px;
 }
 
-.bloc-codes, .bloc-memos {
+.bloc-codes, .bloc-memos, .bloc {
     background-color: white;
 }
 
@@ -73,7 +73,7 @@ h2 {
     color: #ffffff;
 }
 
-.bloc-memos .memo-title {
+.bloc-memos .memo-title, .bloc .title{
     font-weight: bold;
 }
 
@@ -164,4 +164,49 @@ h2 {
 .bottom-bar .middle-element {
     border-left: 1px solid grey;
     border-right: 1px solid grey;
+}
+/*********************************************
+                 Bloc
+*********************************************/
+
+.bloc {
+    background: white;
+    padding: 20px 50px 20px 50px;
+    text-align: left;
+}
+
+.warning{
+    background-color: #f39000;
+    color: #ffffff;
+}
+
+.bloc .bloc-title{
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.bloc .bloc-title .timeslot {
+    color: #5e5e5e;
+    font-size: large;
+}
+
+.bloc-memos .memo-author {
+    font-weight: bold;
+    float: right;
+}
+
+.bloc-memos .memos, .bloc-codes .access-codes {
+    padding: 0 20px 0 20px;
+    margin: 0;
+    position: relative;
+    top: -25px;
+}
+
+.line-separator{
+
+    height:1px;
+    border-bottom:1px solid;
+    border-color: rgba(132, 132, 132, 0.21);
+   margin: 0px 50px;
+
 }

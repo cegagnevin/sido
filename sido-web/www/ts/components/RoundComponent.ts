@@ -14,7 +14,7 @@ import {CORE_DIRECTIVES} from "angular2/common";
 })
 
 @View({
-    templateUrl: './templates/round.html'
+    templateUrl: './templates/round.html',
     directives: [CORE_DIRECTIVES]
 })
 export class RoundComponent {

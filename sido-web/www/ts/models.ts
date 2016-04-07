@@ -74,6 +74,12 @@ export class CoordsGPS {
     }
 }
 
+export class Memo {
+    id: string;
+    title: string;
+    description: string;
+}
+
 export class Address {
     postalCode: string;
     city: string;
@@ -122,6 +128,8 @@ export class Poi {
 export class Round {
     id: string;
     name: string;
+    startAddress: string;
+    finishAddress: string;
     poIs: Array<Poi>;
     customers: Array<Customer>;
 }
