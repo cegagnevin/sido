@@ -2,9 +2,9 @@
     <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
         <a class="navmenu-brand" [routerLink]="['Home']">OnTheRoad</a>
         <ul class="nav navmenu-nav">
-            <li class="nav-menu-user active"><a href="#">{{user.surname}} {{user.forename}}</a></li>
+            <li class="nav-menu-user active"><a>{{user.surname}} {{user.forename}}</a></li>
             <li *ngFor="#round of user.rounds">
-                <a [routerLink]="['TargetHome', {id: round.id}]">{{round.name}}</a>
+                <a [routerLink]="['TargetHome', {id: round.id}]" *ngIf="round">{{round.name}}</a>
             </li>
         </ul>
     </nav>
@@ -15,7 +15,7 @@
             <span class="icon-bar"></span>
         </button>
         <div class="navbar-title">
-            {{round.name}}
+            {{roundName}}
         </div>
     </div>
 </div>

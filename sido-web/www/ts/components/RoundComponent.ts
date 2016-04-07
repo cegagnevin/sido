@@ -17,6 +17,8 @@ import {Router} from "angular2/router";
 import {Customer} from "../models";
 import {User} from "../models";
 import {RouteParams} from "angular2/router";
+import {Inject} from "angular2/core";
+import {Input} from "angular2/core";
 
 
 @Component({
@@ -31,6 +33,7 @@ import {RouteParams} from "angular2/router";
 export class RoundComponent {
     id: string;
     round: Round = new Round();
+    @Input() roundName;
     restaurants: Array<Poi>;
     areas: Array<Poi>;
 
@@ -51,6 +54,7 @@ export class RoundComponent {
         }
 
         localStorage.setItem('currentRound', JSON.stringify(this.round));
+        this.roundName = this.round.name;
 
         this.areas = this.round.poIs.filter(element => element.type == 'area');
         this.restaurants = this.round.poIs.filter(element => element.type == 'restaurant');
