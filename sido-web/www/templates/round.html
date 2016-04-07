@@ -25,11 +25,11 @@
 
 <div class="container customer">
 
-    <div *ngFor="#customer of round.customers" class="round-row">
+    <div *ngFor="#customer of round.customers" class="round-row" (click)="goToCustomer(customer)">
 
-        <div class="bloc">
+        <div class="bloc" >
             <div class="nam bloc-title">
-            {{customer.name}}
+            {{customer.name}} - {{customer.id}}
 
                 <span class="timeslot">
                     <span class="openingHours">
