@@ -6,6 +6,7 @@ import {Router, RouteConfig,  ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular
 import {AppComponent} from "./main";
 import {CustomerComponent} from "./components/CustomerComponent"
 import {LoginFormComponent} from "./components/LoginFormComponent";
+import {NewMemoFormComponent} from "./components/NewMemoFormComponent";
 
 @Component({
     selector: 'my-app',
@@ -16,7 +17,8 @@ import {LoginFormComponent} from "./components/LoginFormComponent";
 @RouteConfig([
     {path: '/login', component: LoginFormComponent, name: 'Login'},
     {path: '/home', component: AppComponent, name: 'Home'},
-    {path: '/customers/:id', component: CustomerComponent, name: 'Customer'}
+    {path: '/customers/:id', component: CustomerComponent, name: 'Customer'},
+    {path: '/customers/:id/memo/create', component: NewMemoFormComponent, name: 'CreateMemoCustomer'}
 ])
 
 export class InternalRouter {

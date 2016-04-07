@@ -53,12 +53,17 @@ export abstract class BaseService<T> {
             .map(res => res.json());
     }
 
-    public save(entity:T, onComplete?:() => void) {
+    protected getSecurityHeaders():Headers {
         var headers:Headers = SecurityUtils.tokenHeaders();
         headers.append('Content-Type', 'application/json');
 
+        return headers;
+    }
+
+    public save(entity:T, onComplete?:() => void) {
+
         this.http.post(BaseService.getServerUrl() + this.getUrl(), JSON.stringify(entity), {
-                headers: headers
+                headers: this.getSecurityHeaders()
             })
             .map(res => res.json())
             .subscribe(
@@ -81,7 +86,7 @@ export abstract class BaseService<T> {
         headers.append('Content-Type', 'application/json');
 
         this.http.patch(BaseService.getServerUrl() + this.getUrl()+"/"+this.getId(entity), JSON.stringify(entity), {
-                headers: headers
+                headers: this.getSecurityHeaders()
             })
             .map(res => res.json())
             .subscribe(

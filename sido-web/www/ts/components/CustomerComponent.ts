@@ -15,7 +15,7 @@ import {Customer} from '../models';
 
 @View({
     templateUrl: './templates/customer.html',
-    directives: [FORM_DIRECTIVES, CORE_DIRECTIVES]
+    directives: [FORM_DIRECTIVES, CORE_DIRECTIVES, ROUTER_DIRECTIVES]
 })
 export class CustomerComponent {
     customer: Customer = new Customer();
@@ -24,12 +24,6 @@ export class CustomerComponent {
 
         this.customer = JSON.parse(localStorage.getItem('customer'));
         console.log("Customer Component" + this.customer);
-        /*
-        customerService.getById(params.get('id'))
-            .subscribe((response:Customer)=> {
-                this.customer = response;
-            });
-        */
     }
 
 }
