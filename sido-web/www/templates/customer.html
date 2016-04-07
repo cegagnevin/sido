@@ -1,6 +1,6 @@
 
 <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
-    <a class="navmenu-brand" href="#">OnTheRoad</a>
+    <a class="navmenu-brand" [routerLink]="['Home']">OnTheRoad</a>
     <ul class="nav navmenu-nav">
         <li class="nav-menu-user active"><a href="#">{{user.surname}} {{user.forename}}</a></li>
         <li *ngFor="#round of user.rounds"><a href="#">{{round.name}}</a></li>
@@ -67,4 +67,9 @@
             </div>
     </div>
 </div>
+
+    <a [routerLink]="['CreateMemoCustomer', {'id': customer.id}]" class="big-button btn-success btn-fixed-right">+</a>
+
+</div>
+
 

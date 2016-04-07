@@ -33,9 +33,6 @@ export class LoginFormComponent {
     }
     onSubmit( ){
         this.submitted = true;
-        console.log("Bilou");
-
-
         this.userService.initSession(this.login, this.password)
             .subscribe(
                 response => this.loginSuccessful(response),

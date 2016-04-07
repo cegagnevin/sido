@@ -37,7 +37,8 @@ export class Constants {
     public static CUSTOMER_URL = "/customer";
     public static ROUND_URL = "/round";
     public static POI_URL = "/poi";
-    public static DOMAIN_URL = "/domaine";
+    public static DOMAIN_URL = "/domain";
+    public static MEMO_URL = "/memo";
 
 
     // Parameters

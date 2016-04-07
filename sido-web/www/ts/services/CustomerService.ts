@@ -7,6 +7,7 @@ import {Http, Headers} from 'angular2/http';
 import {Constants} from "../utils/Constants";
 import {Customer} from "./../models";
 import {BaseService} from "./BaseService";
+import {Memo} from "../models";
 
 
 
@@ -23,5 +24,11 @@ export class CustomerService extends BaseService<Customer> {
         return entity.id;
     }
 
+    public addMemo(customer:Customer, memo: Memo) {
+        return this.http.post(BaseService.getServerUrl() + this.getUrl() + '/' + customer.id + Constants.MEMO_URL, JSON.stringify(memo), {
+                headers: this.getSecurityHeaders()
+            })
+            .map(res => res.json());
+    }
 
 }

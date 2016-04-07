@@ -158,7 +158,7 @@ h2 {
     width: 100%;
     position: relative;
     position:absolute;
-    bottom:0;
+    bottom:-60px;
 }
 
 .bottom-bar .element {
@@ -173,6 +173,9 @@ h2 {
 /*********************************************
                  Bloc
 *********************************************/
+.round-row {
+    margin-top: 20px;
+}
 
 .bloc {
     background: white;
@@ -183,6 +186,16 @@ h2 {
 .warning{
     background-color: #f39000;
     color: #ffffff;
+}
+
+.error {
+    text-align: center;
+    background-color: #fbefed;
+    color: #b92c28;
+    border: 1px solid;
+    padding: 10px;
+    margin: 15px 0;
+    border-radius: 5px;
 }
 
 .bloc .bloc-title{
@@ -212,8 +225,54 @@ h2 {
     height:1px;
     border-bottom:1px solid;
     border-color: rgba(132, 132, 132, 0.21);
-   margin: 0px 50px;
+    margin: 0px 50px;
 
+}
+
+/*********************************************
+                  Button bar
+*********************************************/
+.big-button {
+    font-size: 70px;
+    font-weight: bolder;
+
+
+    min-width: 100px;
+    max-width: 100px;
+    min-height: 100px;
+    max-height: 100px;
+    text-align: center;
+    padding-bottom: 20px;
+    border-radius: 200px;
+    box-shadow: 0px 3px 20px rgba(0,0,0,0.3);
+
+    text-decoration: none;
+
+    transition:ease-in all 0.1s ;
+}
+.big-button:active {
+
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
+}
+
+.big-button .add {
+    background-color: #9bb86d;
+    border-color: #2b542c;
+    color: white;
+    text-decoration: none;
+
+}
+.btn-fixed-right {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+
+    transition:ease-in all 0.1s;
+}
+.btn-fixed-right:active {
+    position: fixed;
+    right: 47px;
+    bottom: 45px;
 }
 
 /*********************************************
