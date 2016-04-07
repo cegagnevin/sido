@@ -12,25 +12,24 @@
 <div id="map"></div>
 
 <div class="bottom-bar">
-    <div class="element">
+    <div class="element" (click)="filter='customer'">
         {{round.customers.length}} clients
     </div>
-    <div class="element middle-element">
+    <div class="element middle-element" (click)="filter='restaurant'">
         {{restaurants.length}} restaurants
     </div>
-    <div class="element">
+    <div class="element" (click)="filter='area'">
         {{areas.length}} aire de repos
     </div>
 </div>
 
-<div class="container customer">
+<div class="container customer" *ngIf="filter ==='customer'">
 
     <div *ngFor="#customer of round.customers" class="round-row" (click)="goToCustomer(customer)">
 
         <div class="bloc" >
             <div class="nam bloc-title">
-            {{customer.name}}
-
+                <h2><img src="./img/truck-info.png"/>  {{customer.name}}
                 <span class="timeslot">
                     <span class="openingHours">
                          {{customer.openingHours}}
@@ -40,6 +39,9 @@
                         {{customer.closingHours}}
                     </span>
                 </span>
+                </h2>
+
+
             </div>
             <div class="address">
                 {{customer.address}}
@@ -47,5 +49,49 @@
 
         </div>
         <div class="line-separator"></div>
+    </div>
+</div>
+
+<div class="container customer" *ngIf="filter ==='restaurant'">
+
+    <div *ngFor="#restaurant of restaurants" class="round-row" (click)="goToRestaurant(restaurant)">
+
+        <div class="bloc" >
+            <div class="nam bloc-title">
+                <h2><img src="./img/restaurant.png" /> {{restaurant.name}}</h2>
+            </div>
+
+            <div class="memos clear">
+                <div *ngFor="#memo of restaurant.memos; #i = index" class="round-row">
+                    <memo class="memo clear">
+                        <div class="memo-title"><h3>{{memo.title}}</h3></div>
+                        <div class="memo-description">{{memo.description}}</div>
+                    </memo>
+                    <hr *ngIf="i != restaurant.memos.length - 1"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container customer" *ngIf="filter ==='area'">
+
+    <div *ngFor="#area of areas" class="round-row" (click)="goToArea(area)">
+
+        <div class="bloc" >
+            <div class="nam bloc-title">
+                <h2><img src="./img/sleep.png" /> {{area.name}}</h2>
+            </div>
+
+            <div class="memos clear">
+                <div *ngFor="#memo of area.memos; #i = index" class="round-row">
+                    <memo class="memo clear">
+                        <div class="memo-title"><h3>{{memo.title}}</h3></div>
+                        <div class="memo-description">{{memo.description}}</div>
+                    </memo>
+                    <hr *ngIf="i != area.memos.length - 1"/>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
