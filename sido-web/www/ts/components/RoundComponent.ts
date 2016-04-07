@@ -36,6 +36,8 @@ export class RoundComponent {
 
     router: Router;
 
+    filter: String="customer";
+
     constructor(router: Router, roundService : RoundService, poiService: PoiService, @Attribute('id') id:string){
         this.id = id;
         this.router = router;
@@ -45,6 +47,10 @@ export class RoundComponent {
 
         this.areas = this.round.poIs.filter(element => element.type == 'area');
         this.restaurants = this.round.poIs.filter(element => element.type == 'restaurant');
+
+        //Todo: Use internal service
+        localStorage.setItem('restaurants', JSON.stringify(this.restaurants));
+
 
         this.initMap();
         this.initPoI();
