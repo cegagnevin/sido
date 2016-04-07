@@ -75,14 +75,20 @@ export class Poi {
     reference: string;
     latitude: number;
     longitude: number;
+    address: string;
+    openingHours: string;
+    closingHours: string;
 
 
-    constructor(type:string, name:string, reference:string, latitude:number, longitude:number) {
+    constructor(type:string, name:string, reference:string, latitude:number, longitude:number, address: string, openingHours: string, closingHours: string) {
         this.type = type;
         this.name = name;
         this.reference = reference;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.address = address;
+        this.openingHours = openingHours;
+        this.closingHours = closingHours;
     }
 }
 

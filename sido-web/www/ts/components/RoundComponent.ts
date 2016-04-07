@@ -16,12 +16,14 @@ import {
 import {Router} from "angular2/router";
 import {Customer} from "../models";
 import {User} from "../models";
+import {RouteParams} from "angular2/router";
+import {Inject} from "angular2/core";
+import {Input} from "angular2/core";
 
 
 @Component({
     selector: 'round',
-    providers: [RoundService, PoiService],
-    properties: ['id']
+    providers: [RoundService, PoiService]
 })
 
 @View({
@@ -31,6 +33,7 @@ import {User} from "../models";
 export class RoundComponent {
     id: string;
     round: Round = new Round();
+    @Input() roundName;
     restaurants: Array<Poi>;
     areas: Array<Poi>;
 
@@ -38,12 +41,20 @@ export class RoundComponent {
 
     filter: String="customer";
 
-    constructor(router: Router, roundService : RoundService, poiService: PoiService, @Attribute('id') id:string){
-        this.id = id;
+    constructor(params: RouteParams,router: Router, roundService : RoundService, poiService: PoiService){
+        this.id = params.get('id') || null;
         this.router = router;
 
         var user = <User>JSON.parse(localStorage.getItem('user'));
-        this.round = user.rounds[0];
+
+        if(this.id === null) {
+            this.round = user.rounds[0];
+        } else {
+            this.round = user.rounds.find(element=> element['id'] == this.id);
+        }
+
+        localStorage.setItem('currentRound', JSON.stringify(this.round));
+        this.roundName = this.round.name;
 
         this.areas = this.round.poIs.filter(element => element.type == 'area');
         this.restaurants = this.round.poIs.filter(element => element.type == 'restaurant');
@@ -64,7 +75,7 @@ export class RoundComponent {
     initPoI() {
         if(this.round.poIs != null) {
             this.round.poIs.forEach(function (poi) {
-                Facade.addMarkerWithType(+poi.latitude, +poi.longitude, poi.name, poi.type);
+                Facade.addMarkerWithType(+poi.latitude, +poi.longitude, poi.name, poi.type, poi.address, poi.openingHours, poi.closingHours);
             })
         }
     }
@@ -72,7 +83,7 @@ export class RoundComponent {
     initCustomers() {
         if(this.round.customers != null) {
             this.round.customers.forEach(function (customer) {
-                Facade.addMarkerWithType(+customer.latitude, +customer.longitude, customer.name, 'customer');
+                Facade.addMarkerWithType(+customer.latitude, +customer.longitude, customer.name, 'customer', customer.address, customer.openingHours, customer.closingHours);
             })
         }
     }
