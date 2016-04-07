@@ -6,6 +6,7 @@ import {FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/common';
 import {ROUTER_DIRECTIVES, RouteParams, RouteConfig, Router} from "angular2/router";
 import {CustomerService} from "../services/CustomerService";
 import {Customer} from '../models';
+import {User} from "../models";
 
 
 @Component({
@@ -19,10 +20,13 @@ import {Customer} from '../models';
 })
 export class CustomerComponent {
     customer: Customer = new Customer();
+    user:User;
 
     constructor(params: RouteParams, customerService: CustomerService) {
 
         this.customer = JSON.parse(localStorage.getItem('customer'));
+        this.user = <User>JSON.parse(localStorage.getItem('user'));
+
         console.log("Customer Component" + this.customer);
         /*
         customerService.getById(params.get('id'))

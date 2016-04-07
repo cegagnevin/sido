@@ -11,6 +11,8 @@ import {UserService} from "./services/UserService";
 import {LoginFormComponent} from './components/LoginFormComponent';
 import {RoundComponent} from './components/RoundComponent';
 import {Facade} from "./Facade";
+import {User} from "./models";
+import {Round} from "./models";
 
 @Component({
     providers: [UserService]
@@ -24,18 +26,13 @@ export class AppComponent {
 
     public latitude:number;
     public longitude:number;
+    user: User;
+    round: Round;
 
     constructor() {
         console.log('Home loaded');
-        /*Facade.initItinerary('Paris', 'Clermont-Ferrand');
-        Facade.addMarker(47.902964, 1.9092510000000402, 'test jkh jkdsf sdkjfhsd fkjhds fkdhs fsdk');
-        Facade.addMarker(45.7851608, 4.8567564999999995, 'On est ici !');
-
-        Facade.getGPSCoordinates((function(coords) {
-            this.latitude = coords.latitude;
-            this.longitude = coords.longitude;
-        }).bind(this), function(error) {
-            console.log(error.code + ' - ' + error.message)
-        });*/
+        this.user = <User>JSON.parse(localStorage.getItem('user'));
+        console.log(this.round);
+        this.round = this.user.rounds[+localStorage.getItem('currentRound')];
     }
 }
