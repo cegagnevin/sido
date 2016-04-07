@@ -3,12 +3,15 @@ import {UserService} from "./../services/UserService";
 import {Router} from "angular2/router";
 import {Response} from 'angular2/http';
 import {ROUTER_DIRECTIVES} from "angular2/router";
+import {View} from "angular2/core";
 
 @Component({
-    templateUrl: './templates/_login.html',
-    styleUrls: ['./css/login.css'],
-    directives: [ ROUTER_DIRECTIVES],
-    providers: [UserService]
+    providers: [UserService, ROUTER_DIRECTIVES]
+})
+
+@View({
+    templateUrl: './templates/login.html',
+    styleUrls: ['./css/login.css']
 })
 
 export class LoginFormComponent {

@@ -11,7 +11,7 @@ import {BaseService} from "./BaseService";
 
 
 @Injectable()
-export class RoundService extends BaseService<Domain> {
+export class DomainService extends BaseService<Domain> {
     constructor(http:Http) {
         super(http);
     }

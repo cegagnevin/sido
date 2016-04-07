@@ -9,6 +9,7 @@ import {OnInit} from "angular2/core";
 
 import {UserService} from "./services/UserService";
 import {LoginFormComponent} from './components/LoginFormComponent';
+import {RoundComponent} from './components/RoundComponent';
 import {Facade} from "./Facade";
 
 @Component({
@@ -17,7 +18,7 @@ import {Facade} from "./Facade";
 @View({
     templateUrl: './templates/home.html',
     styleUrls: ['./css/quizz.css'],
-    directives: [FORM_DIRECTIVES, CORE_DIRECTIVES, ROUTER_DIRECTIVES]
+    directives: [FORM_DIRECTIVES, CORE_DIRECTIVES, ROUTER_DIRECTIVES, RoundComponent]
 })
 export class AppComponent {
 

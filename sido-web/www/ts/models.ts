@@ -65,8 +65,13 @@ export class User {
 //--------------------------------------------------------------------------------
 
 export class CoordsGPS {
-    lon: number;
     lat: number;
+    lon: number;
+
+    constructor( lat:number, lon:number) {
+        this.lat = lat;
+        this.lon = lon;
+    }
 }
 
 export class Address {
@@ -104,6 +109,14 @@ export class Poi {
     id: string;
     type: string;
     reference: string;
+    coords : CoordsGPS;
+
+
+    constructor(type:string, reference:string, coords:CoordsGPS) {
+        this.type = type;
+        this.reference = reference;
+        this.coords = coords;
+    }
 }
 
 export class Round {

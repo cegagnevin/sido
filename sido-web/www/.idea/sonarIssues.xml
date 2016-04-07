@@ -3,12 +3,32 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="/Dummy.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/css/login.css">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/index.html">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/node_modules/angular2/src/facade/promise.d.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/templates/_accessCode.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/templates/_bloc.html">
           <value>
             <set />
           </value>
@@ -28,7 +48,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/templates/round.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/ts/components/AccessCodeComponent.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/ts/components/CustomerComponent.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/ts/components/CustomersListComponent.ts">
           <value>
             <set />
           </value>
@@ -39,6 +74,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/ts/components/RoundComponent.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/ts/components/RoundListComponent.ts">
           <value>
             <set />
           </value>

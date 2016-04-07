@@ -7,6 +7,7 @@ import {Http, Headers} from 'angular2/http';
 import {Constants} from "../utils/Constants";
 import {Round} from "./../models";
 import {BaseService} from "./BaseService";
+import {User} from "../models";
 
 
 
@@ -22,6 +23,5 @@ export class RoundService extends BaseService<Round> {
     protected getId(entity:Round):string {
         return entity.id;
     }
-
 
 }

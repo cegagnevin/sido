@@ -39,6 +39,10 @@
     "./Facade.ts",
     "./components/CustomerComponent.ts",
     "./components/LoginFormComponent.ts",
-    "./services/CustomerService.ts"
+    "./services/CustomerService.ts",
+    "./services/DomainService.ts",
+    "./services/PoiService.ts",
+    "./services/RoundService.ts",
+    "./components/RoundComponent.ts"
   ]
 }
