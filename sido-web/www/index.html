@@ -13,6 +13,7 @@
     <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js" ></script>
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css"/>
 
+
     <!-- Angular2 scripts -->
     <script src="./node_modules/traceur-runtime/index.js"></script>
     <script src="./node_modules/systemjs/dist/system.src.js"></script>
@@ -31,14 +32,35 @@
 	<!-- This file loads the applications JavaScript files.-->
       <script src="js/index.js"></script>
       <script src="custom_js/ontheroad.js"></script>
+    <script src="custom_js/jasny-bootstrap.min.js"></script>
+    <script src="custom_js/custom.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqtP0m6qKQGGupWg9ddeth7qmZjSfw1Vk&signed_in=true" ></script>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="./css/ontheroad.css" />
+    <link rel="stylesheet" href="./css/jasny-bootstrap.min.css" type="text/css"/>
 
   </head>
   <body>
     <div class="app container">
+      <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
+        <a class="navmenu-brand" href="#">OnTheRoad</a>
+        <ul class="nav navmenu-nav">
+          <li class="nav-menu-user active"><a href="#">John Doe</a></li>
+          <li><a href="#">A001 - Clermont Paris</a></li>
+          <li><a href="#">A002 - Lyon Nice</a></li>
+        </ul>
+      </nav>
+      <div class="navbar navbar-default navbar-fixed-top">
+        <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-title">
+          A011 - Clermont Tokyo
+        </div>
+      </div>
       <my-app>
           Loading...
       </my-app>
