@@ -75,7 +75,7 @@ export class RoundComponent {
     initPoI() {
         if(this.round.poIs != null) {
             this.round.poIs.forEach(function (poi) {
-                Facade.addMarkerWithType(+poi.latitude, +poi.longitude, poi.name, poi.type);
+                Facade.addMarkerWithType(+poi.latitude, +poi.longitude, poi.name, poi.type, poi.address, poi.openingHours, poi.closingHours);
             })
         }
     }
@@ -83,7 +83,7 @@ export class RoundComponent {
     initCustomers() {
         if(this.round.customers != null) {
             this.round.customers.forEach(function (customer) {
-                Facade.addMarkerWithType(+customer.latitude, +customer.longitude, customer.name, 'customer');
+                Facade.addMarkerWithType(+customer.latitude, +customer.longitude, customer.name, 'customer', customer.address, customer.openingHours, customer.closingHours);
             })
         }
     }

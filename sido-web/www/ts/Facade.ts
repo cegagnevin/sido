@@ -1,6 +1,6 @@
 declare function initItinerary(origin, destination, poIs, customers): void;
-declare function addMarker(latitude, longitude, title): void;
-declare function addMarkerWithType(latitude, longitude, title, type): void;
+declare function addMarker(latitude, longitude, title, address, openingHours, closingHours): void;
+declare function addMarkerWithType(latitude, longitude, title, type, address, openingHours, closingHours): void;
 declare function getGPSCoordinates(cbSuccess, cbError): void;
 
 export class Facade {
@@ -9,12 +9,12 @@ export class Facade {
         initItinerary(origin, destination, poIs, customers);
     }
 
-    static addMarker(latitude, longitude, title) {
-        addMarker(latitude, longitude, title);
+    static addMarker(latitude, longitude, title, address, openingHours, closingHours) {
+        addMarker(latitude, longitude, title, address, openingHours, closingHours);
     }
 
-    static addMarkerWithType(latitude, longitude, title, type) {
-        addMarkerWithType(latitude, longitude, title, type);
+    static addMarkerWithType(latitude, longitude, title, type, address, openingHours, closingHours) {
+        addMarkerWithType(latitude, longitude, title, type, address, openingHours, closingHours);
     }
 
     static getGPSCoordinates(cbSuccess, cbError) {
